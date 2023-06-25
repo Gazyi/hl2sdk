@@ -1,0 +1,27 @@
+import "networkbasetypes.proto";
+
+option optimize_for = SPEED;
+option cc_generic_services = false;
+
+message CBaseUserCmdPB {
+	optional int32 command_number = 1;
+	optional int32 tick_count = 2;
+	optional .CMsgQAngle viewangles = 3;
+	optional .CMsgVector aimdirection = 4;
+	optional float forwardmove = 5;
+	optional float leftmove = 6;
+	optional float sidemove = 7;
+	optional float upmove = 8;
+	optional int32 buttons = 9;
+	optional int32 impulse = 10;
+	optional int32 weaponselect = 11;
+	optional int32 weaponsubtype = 12;
+	optional int32 random_seed = 13;
+	optional int32 mousedx = 14;
+	optional int32 mousedy = 15;
+	optional bool hasbeenpredicted = 16;
+}
+
+message CUserCmdPB {
+	optional .CBaseUserCmdPB base = 1;
+}

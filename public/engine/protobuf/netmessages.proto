@@ -1,4 +1,4 @@
-import "google/protobuf/descriptor.proto";
+import "networkbasetypes.proto";
 
 option cc_generic_services = false;
 
@@ -74,6 +74,7 @@ enum SVC_Messages {
 	svc_HltvReplay = 36;
 	svc_Broadcast_Command = 38;
 	svc_HltvFixupOperatorStatus = 39;
+	svc_SetPauseTimed = 40;
 }
 
 enum ReplayEventType_t {
@@ -82,30 +83,6 @@ enum ReplayEventType_t {
 	REPLAY_EVENT_GENERIC = 2;
 	REPLAY_EVENT_STUCK_NEED_FULL_UPDATE = 3;
 	REPLAY_EVENT_VICTORY = 4;
-}
-
-message CMsgVector {
-	optional float x = 1;
-	optional float y = 2;
-	optional float z = 3;
-}
-
-message CMsgVector2D {
-	optional float x = 1;
-	optional float y = 2;
-}
-
-message CMsgQAngle {
-	optional float x = 1;
-	optional float y = 2;
-	optional float z = 3;
-}
-
-message CMsgRGBA {
-	optional int32 r = 1;
-	optional int32 g = 2;
-	optional int32 b = 3;
-	optional int32 a = 4;
 }
 
 message CNETMsg_Tick {
@@ -169,10 +146,9 @@ message CCLCMsg_ClientInfo {
 	optional fixed32 send_table_crc = 1;
 	optional uint32 server_count = 2;
 	optional bool is_hltv = 3;
-	optional bool is_replay = 4;
-	optional uint32 friends_id = 5;
-	optional string friends_name = 6;
-	repeated fixed32 custom_files = 7;
+	optional uint32 friends_id = 4;
+	optional string friends_name = 5;
+	repeated fixed32 custom_files = 6;
 }
 
 message CCLCMsg_Move {
@@ -236,13 +212,12 @@ message CSVCMsg_ServerInfo {
 	optional int32 protocol = 1;
 	optional int32 server_count = 2;
 	optional bool is_dedicated = 3;
-	optional bool is_official_valve_server = 4;
-	optional bool is_hltv = 5;
-	optional bool is_replay = 6;
-	optional bool is_redirecting_to_proxy_relay = 21;
-	optional int32 c_os = 7;
-	optional fixed32 map_crc = 8;
-	optional fixed32 client_crc = 9;
+	optional bool is_official = 4;
+	optional bool is_protected = 5;
+	optional bool is_hltv = 6;
+	optional bool is_redirecting_to_proxy_relay = 7;
+	optional int32 c_os = 8;
+	optional fixed32 worldmap_crc = 9;
 	optional fixed32 string_table_crc = 10;
 	optional int32 max_clients = 11;
 	optional int32 max_classes = 12;
@@ -251,12 +226,8 @@ message CSVCMsg_ServerInfo {
 	optional string game_dir = 15;
 	optional string map_name = 16;
 	optional string map_group_name = 17;
-	optional string sky_name = 18;
-	optional string host_name = 19;
-	optional uint32 public_ip = 20;
-	optional uint64 ugc_map_id = 22;
-	optional bool allow_loose_file_loads = 23;
-	optional bool allow_user_workshop_content = 24;
+	optional string host_name = 18;
+	optional uint64 ugc_map_id = 19;
 }
 
 message CSVCMsg_ClassInfo {
@@ -295,6 +266,11 @@ message CSVCMsg_Print {
 
 message CSVCMsg_SetPause {
 	optional bool paused = 1;
+}
+
+message CSVCMsg_SetPauseTimed {
+	optional bool paused = 1;
+	optional float expire_time = 2;
 }
 
 message CSVCMsg_SetView {

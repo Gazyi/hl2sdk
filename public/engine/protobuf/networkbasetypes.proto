@@ -1,0 +1,27 @@
+import "google/protobuf/descriptor.proto";
+
+option cc_generic_services = false;
+
+message CMsgVector {
+	optional float x = 1;
+	optional float y = 2;
+	optional float z = 3;
+}
+
+message CMsgVector2D {
+	optional float x = 1;
+	optional float y = 2;
+}
+
+message CMsgQAngle {
+	optional float x = 1;
+	optional float y = 2;
+	optional float z = 3;
+}
+
+message CMsgRGBA {
+	optional int32 r = 1;
+	optional int32 g = 2;
+	optional int32 b = 3;
+	optional int32 a = 4;
+}

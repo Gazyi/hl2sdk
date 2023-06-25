@@ -25,7 +25,7 @@
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "google/protobuf/descriptor.pb.h"
+#include "networkbasetypes.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Internal implementation detail -- do not call these.
@@ -33,10 +33,6 @@ void  protobuf_AddDesc_netmessages_2eproto();
 void protobuf_AssignDesc_netmessages_2eproto();
 void protobuf_ShutdownFile_netmessages_2eproto();
 
-class CMsgVector;
-class CMsgVector2D;
-class CMsgQAngle;
-class CMsgRGBA;
 class CNETMsg_Tick;
 class CNETMsg_StringCmd;
 class CNETMsg_SignonState;
@@ -65,6 +61,7 @@ class CSVCMsg_SendTable;
 class CSVCMsg_SendTable_sendprop_t;
 class CSVCMsg_Print;
 class CSVCMsg_SetPause;
+class CSVCMsg_SetPauseTimed;
 class CSVCMsg_SetView;
 class CSVCMsg_CreateStringTable;
 class CSVCMsg_UpdateStringTable;
@@ -223,11 +220,12 @@ enum SVC_Messages {
   svc_EncryptedData = 35,
   svc_HltvReplay = 36,
   svc_Broadcast_Command = 38,
-  svc_HltvFixupOperatorStatus = 39
+  svc_HltvFixupOperatorStatus = 39,
+  svc_SetPauseTimed = 40
 };
 bool SVC_Messages_IsValid(int value);
 const SVC_Messages SVC_Messages_MIN = svc_ServerInfo;
-const SVC_Messages SVC_Messages_MAX = svc_HltvFixupOperatorStatus;
+const SVC_Messages SVC_Messages_MAX = svc_SetPauseTimed;
 const int SVC_Messages_ARRAYSIZE = SVC_Messages_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* SVC_Messages_descriptor();
@@ -263,414 +261,6 @@ inline bool ReplayEventType_t_Parse(
     ReplayEventType_t_descriptor(), name, value);
 }
 // ===================================================================
-
-class CMsgVector : public ::google::protobuf::Message {
- public:
-  CMsgVector();
-  virtual ~CMsgVector();
-
-  CMsgVector(const CMsgVector& from);
-
-  inline CMsgVector& operator=(const CMsgVector& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgVector& default_instance();
-
-  void Swap(CMsgVector* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgVector* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgVector& from);
-  void MergeFrom(const CMsgVector& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional float x = 1;
-  inline bool has_x() const;
-  inline void clear_x();
-  static const int kXFieldNumber = 1;
-  inline float x() const;
-  inline void set_x(float value);
-
-  // optional float y = 2;
-  inline bool has_y() const;
-  inline void clear_y();
-  static const int kYFieldNumber = 2;
-  inline float y() const;
-  inline void set_y(float value);
-
-  // optional float z = 3;
-  inline bool has_z() const;
-  inline void clear_z();
-  static const int kZFieldNumber = 3;
-  inline float z() const;
-  inline void set_z(float value);
-
-  // @@protoc_insertion_point(class_scope:CMsgVector)
- private:
-  inline void set_has_x();
-  inline void clear_has_x();
-  inline void set_has_y();
-  inline void clear_has_y();
-  inline void set_has_z();
-  inline void clear_has_z();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  float x_;
-  float y_;
-  float z_;
-
-  mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
-
-  friend void  protobuf_AddDesc_netmessages_2eproto();
-  friend void protobuf_AssignDesc_netmessages_2eproto();
-  friend void protobuf_ShutdownFile_netmessages_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgVector* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgVector2D : public ::google::protobuf::Message {
- public:
-  CMsgVector2D();
-  virtual ~CMsgVector2D();
-
-  CMsgVector2D(const CMsgVector2D& from);
-
-  inline CMsgVector2D& operator=(const CMsgVector2D& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgVector2D& default_instance();
-
-  void Swap(CMsgVector2D* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgVector2D* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgVector2D& from);
-  void MergeFrom(const CMsgVector2D& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional float x = 1;
-  inline bool has_x() const;
-  inline void clear_x();
-  static const int kXFieldNumber = 1;
-  inline float x() const;
-  inline void set_x(float value);
-
-  // optional float y = 2;
-  inline bool has_y() const;
-  inline void clear_y();
-  static const int kYFieldNumber = 2;
-  inline float y() const;
-  inline void set_y(float value);
-
-  // @@protoc_insertion_point(class_scope:CMsgVector2D)
- private:
-  inline void set_has_x();
-  inline void clear_has_x();
-  inline void set_has_y();
-  inline void clear_has_y();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  float x_;
-  float y_;
-
-  mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
-
-  friend void  protobuf_AddDesc_netmessages_2eproto();
-  friend void protobuf_AssignDesc_netmessages_2eproto();
-  friend void protobuf_ShutdownFile_netmessages_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgVector2D* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgQAngle : public ::google::protobuf::Message {
- public:
-  CMsgQAngle();
-  virtual ~CMsgQAngle();
-
-  CMsgQAngle(const CMsgQAngle& from);
-
-  inline CMsgQAngle& operator=(const CMsgQAngle& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgQAngle& default_instance();
-
-  void Swap(CMsgQAngle* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgQAngle* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgQAngle& from);
-  void MergeFrom(const CMsgQAngle& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional float x = 1;
-  inline bool has_x() const;
-  inline void clear_x();
-  static const int kXFieldNumber = 1;
-  inline float x() const;
-  inline void set_x(float value);
-
-  // optional float y = 2;
-  inline bool has_y() const;
-  inline void clear_y();
-  static const int kYFieldNumber = 2;
-  inline float y() const;
-  inline void set_y(float value);
-
-  // optional float z = 3;
-  inline bool has_z() const;
-  inline void clear_z();
-  static const int kZFieldNumber = 3;
-  inline float z() const;
-  inline void set_z(float value);
-
-  // @@protoc_insertion_point(class_scope:CMsgQAngle)
- private:
-  inline void set_has_x();
-  inline void clear_has_x();
-  inline void set_has_y();
-  inline void clear_has_y();
-  inline void set_has_z();
-  inline void clear_has_z();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  float x_;
-  float y_;
-  float z_;
-
-  mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(3 + 31) / 32];
-
-  friend void  protobuf_AddDesc_netmessages_2eproto();
-  friend void protobuf_AssignDesc_netmessages_2eproto();
-  friend void protobuf_ShutdownFile_netmessages_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgQAngle* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgRGBA : public ::google::protobuf::Message {
- public:
-  CMsgRGBA();
-  virtual ~CMsgRGBA();
-
-  CMsgRGBA(const CMsgRGBA& from);
-
-  inline CMsgRGBA& operator=(const CMsgRGBA& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgRGBA& default_instance();
-
-  void Swap(CMsgRGBA* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgRGBA* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgRGBA& from);
-  void MergeFrom(const CMsgRGBA& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional int32 r = 1;
-  inline bool has_r() const;
-  inline void clear_r();
-  static const int kRFieldNumber = 1;
-  inline ::google::protobuf::int32 r() const;
-  inline void set_r(::google::protobuf::int32 value);
-
-  // optional int32 g = 2;
-  inline bool has_g() const;
-  inline void clear_g();
-  static const int kGFieldNumber = 2;
-  inline ::google::protobuf::int32 g() const;
-  inline void set_g(::google::protobuf::int32 value);
-
-  // optional int32 b = 3;
-  inline bool has_b() const;
-  inline void clear_b();
-  static const int kBFieldNumber = 3;
-  inline ::google::protobuf::int32 b() const;
-  inline void set_b(::google::protobuf::int32 value);
-
-  // optional int32 a = 4;
-  inline bool has_a() const;
-  inline void clear_a();
-  static const int kAFieldNumber = 4;
-  inline ::google::protobuf::int32 a() const;
-  inline void set_a(::google::protobuf::int32 value);
-
-  // @@protoc_insertion_point(class_scope:CMsgRGBA)
- private:
-  inline void set_has_r();
-  inline void clear_has_r();
-  inline void set_has_g();
-  inline void clear_has_g();
-  inline void set_has_b();
-  inline void clear_has_b();
-  inline void set_has_a();
-  inline void clear_has_a();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::int32 r_;
-  ::google::protobuf::int32 g_;
-  ::google::protobuf::int32 b_;
-  ::google::protobuf::int32 a_;
-
-  mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
-
-  friend void  protobuf_AddDesc_netmessages_2eproto();
-  friend void protobuf_AssignDesc_netmessages_2eproto();
-  friend void protobuf_ShutdownFile_netmessages_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgRGBA* default_instance_;
-};
-// -------------------------------------------------------------------
 
 class CNETMsg_Tick : public ::google::protobuf::Message {
  public:
@@ -1828,24 +1418,17 @@ class CCLCMsg_ClientInfo : public ::google::protobuf::Message {
   inline bool is_hltv() const;
   inline void set_is_hltv(bool value);
 
-  // optional bool is_replay = 4;
-  inline bool has_is_replay() const;
-  inline void clear_is_replay();
-  static const int kIsReplayFieldNumber = 4;
-  inline bool is_replay() const;
-  inline void set_is_replay(bool value);
-
-  // optional uint32 friends_id = 5;
+  // optional uint32 friends_id = 4;
   inline bool has_friends_id() const;
   inline void clear_friends_id();
-  static const int kFriendsIdFieldNumber = 5;
+  static const int kFriendsIdFieldNumber = 4;
   inline ::google::protobuf::uint32 friends_id() const;
   inline void set_friends_id(::google::protobuf::uint32 value);
 
-  // optional string friends_name = 6;
+  // optional string friends_name = 5;
   inline bool has_friends_name() const;
   inline void clear_friends_name();
-  static const int kFriendsNameFieldNumber = 6;
+  static const int kFriendsNameFieldNumber = 5;
   inline const ::std::string& friends_name() const;
   inline void set_friends_name(const ::std::string& value);
   inline void set_friends_name(const char* value);
@@ -1854,10 +1437,10 @@ class CCLCMsg_ClientInfo : public ::google::protobuf::Message {
   inline ::std::string* release_friends_name();
   inline void set_allocated_friends_name(::std::string* friends_name);
 
-  // repeated fixed32 custom_files = 7;
+  // repeated fixed32 custom_files = 6;
   inline int custom_files_size() const;
   inline void clear_custom_files();
-  static const int kCustomFilesFieldNumber = 7;
+  static const int kCustomFilesFieldNumber = 6;
   inline ::google::protobuf::uint32 custom_files(int index) const;
   inline void set_custom_files(int index, ::google::protobuf::uint32 value);
   inline void add_custom_files(::google::protobuf::uint32 value);
@@ -1874,8 +1457,6 @@ class CCLCMsg_ClientInfo : public ::google::protobuf::Message {
   inline void clear_has_server_count();
   inline void set_has_is_hltv();
   inline void clear_has_is_hltv();
-  inline void set_has_is_replay();
-  inline void clear_has_is_replay();
   inline void set_has_friends_id();
   inline void clear_has_friends_id();
   inline void set_has_friends_name();
@@ -1886,13 +1467,12 @@ class CCLCMsg_ClientInfo : public ::google::protobuf::Message {
   ::google::protobuf::uint32 send_table_crc_;
   ::google::protobuf::uint32 server_count_;
   bool is_hltv_;
-  bool is_replay_;
   ::google::protobuf::uint32 friends_id_;
   ::std::string* friends_name_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > custom_files_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(7 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(6 + 31) / 32];
 
   friend void  protobuf_AddDesc_netmessages_2eproto();
   friend void protobuf_AssignDesc_netmessages_2eproto();
@@ -2971,54 +2551,47 @@ class CSVCMsg_ServerInfo : public ::google::protobuf::Message {
   inline bool is_dedicated() const;
   inline void set_is_dedicated(bool value);
 
-  // optional bool is_official_valve_server = 4;
-  inline bool has_is_official_valve_server() const;
-  inline void clear_is_official_valve_server();
-  static const int kIsOfficialValveServerFieldNumber = 4;
-  inline bool is_official_valve_server() const;
-  inline void set_is_official_valve_server(bool value);
+  // optional bool is_official = 4;
+  inline bool has_is_official() const;
+  inline void clear_is_official();
+  static const int kIsOfficialFieldNumber = 4;
+  inline bool is_official() const;
+  inline void set_is_official(bool value);
 
-  // optional bool is_hltv = 5;
+  // optional bool is_protected = 5;
+  inline bool has_is_protected() const;
+  inline void clear_is_protected();
+  static const int kIsProtectedFieldNumber = 5;
+  inline bool is_protected() const;
+  inline void set_is_protected(bool value);
+
+  // optional bool is_hltv = 6;
   inline bool has_is_hltv() const;
   inline void clear_is_hltv();
-  static const int kIsHltvFieldNumber = 5;
+  static const int kIsHltvFieldNumber = 6;
   inline bool is_hltv() const;
   inline void set_is_hltv(bool value);
 
-  // optional bool is_replay = 6;
-  inline bool has_is_replay() const;
-  inline void clear_is_replay();
-  static const int kIsReplayFieldNumber = 6;
-  inline bool is_replay() const;
-  inline void set_is_replay(bool value);
-
-  // optional bool is_redirecting_to_proxy_relay = 21;
+  // optional bool is_redirecting_to_proxy_relay = 7;
   inline bool has_is_redirecting_to_proxy_relay() const;
   inline void clear_is_redirecting_to_proxy_relay();
-  static const int kIsRedirectingToProxyRelayFieldNumber = 21;
+  static const int kIsRedirectingToProxyRelayFieldNumber = 7;
   inline bool is_redirecting_to_proxy_relay() const;
   inline void set_is_redirecting_to_proxy_relay(bool value);
 
-  // optional int32 c_os = 7;
+  // optional int32 c_os = 8;
   inline bool has_c_os() const;
   inline void clear_c_os();
-  static const int kCOsFieldNumber = 7;
+  static const int kCOsFieldNumber = 8;
   inline ::google::protobuf::int32 c_os() const;
   inline void set_c_os(::google::protobuf::int32 value);
 
-  // optional fixed32 map_crc = 8;
-  inline bool has_map_crc() const;
-  inline void clear_map_crc();
-  static const int kMapCrcFieldNumber = 8;
-  inline ::google::protobuf::uint32 map_crc() const;
-  inline void set_map_crc(::google::protobuf::uint32 value);
-
-  // optional fixed32 client_crc = 9;
-  inline bool has_client_crc() const;
-  inline void clear_client_crc();
-  static const int kClientCrcFieldNumber = 9;
-  inline ::google::protobuf::uint32 client_crc() const;
-  inline void set_client_crc(::google::protobuf::uint32 value);
+  // optional fixed32 worldmap_crc = 9;
+  inline bool has_worldmap_crc() const;
+  inline void clear_worldmap_crc();
+  static const int kWorldmapCrcFieldNumber = 9;
+  inline ::google::protobuf::uint32 worldmap_crc() const;
+  inline void set_worldmap_crc(::google::protobuf::uint32 value);
 
   // optional fixed32 string_table_crc = 10;
   inline bool has_string_table_crc() const;
@@ -3091,22 +2664,10 @@ class CSVCMsg_ServerInfo : public ::google::protobuf::Message {
   inline ::std::string* release_map_group_name();
   inline void set_allocated_map_group_name(::std::string* map_group_name);
 
-  // optional string sky_name = 18;
-  inline bool has_sky_name() const;
-  inline void clear_sky_name();
-  static const int kSkyNameFieldNumber = 18;
-  inline const ::std::string& sky_name() const;
-  inline void set_sky_name(const ::std::string& value);
-  inline void set_sky_name(const char* value);
-  inline void set_sky_name(const char* value, size_t size);
-  inline ::std::string* mutable_sky_name();
-  inline ::std::string* release_sky_name();
-  inline void set_allocated_sky_name(::std::string* sky_name);
-
-  // optional string host_name = 19;
+  // optional string host_name = 18;
   inline bool has_host_name() const;
   inline void clear_host_name();
-  static const int kHostNameFieldNumber = 19;
+  static const int kHostNameFieldNumber = 18;
   inline const ::std::string& host_name() const;
   inline void set_host_name(const ::std::string& value);
   inline void set_host_name(const char* value);
@@ -3115,33 +2676,12 @@ class CSVCMsg_ServerInfo : public ::google::protobuf::Message {
   inline ::std::string* release_host_name();
   inline void set_allocated_host_name(::std::string* host_name);
 
-  // optional uint32 public_ip = 20;
-  inline bool has_public_ip() const;
-  inline void clear_public_ip();
-  static const int kPublicIpFieldNumber = 20;
-  inline ::google::protobuf::uint32 public_ip() const;
-  inline void set_public_ip(::google::protobuf::uint32 value);
-
-  // optional uint64 ugc_map_id = 22;
+  // optional uint64 ugc_map_id = 19;
   inline bool has_ugc_map_id() const;
   inline void clear_ugc_map_id();
-  static const int kUgcMapIdFieldNumber = 22;
+  static const int kUgcMapIdFieldNumber = 19;
   inline ::google::protobuf::uint64 ugc_map_id() const;
   inline void set_ugc_map_id(::google::protobuf::uint64 value);
-
-  // optional bool allow_loose_file_loads = 23;
-  inline bool has_allow_loose_file_loads() const;
-  inline void clear_allow_loose_file_loads();
-  static const int kAllowLooseFileLoadsFieldNumber = 23;
-  inline bool allow_loose_file_loads() const;
-  inline void set_allow_loose_file_loads(bool value);
-
-  // optional bool allow_user_workshop_content = 24;
-  inline bool has_allow_user_workshop_content() const;
-  inline void clear_allow_user_workshop_content();
-  static const int kAllowUserWorkshopContentFieldNumber = 24;
-  inline bool allow_user_workshop_content() const;
-  inline void set_allow_user_workshop_content(bool value);
 
   // @@protoc_insertion_point(class_scope:CSVCMsg_ServerInfo)
  private:
@@ -3151,20 +2691,18 @@ class CSVCMsg_ServerInfo : public ::google::protobuf::Message {
   inline void clear_has_server_count();
   inline void set_has_is_dedicated();
   inline void clear_has_is_dedicated();
-  inline void set_has_is_official_valve_server();
-  inline void clear_has_is_official_valve_server();
+  inline void set_has_is_official();
+  inline void clear_has_is_official();
+  inline void set_has_is_protected();
+  inline void clear_has_is_protected();
   inline void set_has_is_hltv();
   inline void clear_has_is_hltv();
-  inline void set_has_is_replay();
-  inline void clear_has_is_replay();
   inline void set_has_is_redirecting_to_proxy_relay();
   inline void clear_has_is_redirecting_to_proxy_relay();
   inline void set_has_c_os();
   inline void clear_has_c_os();
-  inline void set_has_map_crc();
-  inline void clear_has_map_crc();
-  inline void set_has_client_crc();
-  inline void clear_has_client_crc();
+  inline void set_has_worldmap_crc();
+  inline void clear_has_worldmap_crc();
   inline void set_has_string_table_crc();
   inline void clear_has_string_table_crc();
   inline void set_has_max_clients();
@@ -3181,48 +2719,35 @@ class CSVCMsg_ServerInfo : public ::google::protobuf::Message {
   inline void clear_has_map_name();
   inline void set_has_map_group_name();
   inline void clear_has_map_group_name();
-  inline void set_has_sky_name();
-  inline void clear_has_sky_name();
   inline void set_has_host_name();
   inline void clear_has_host_name();
-  inline void set_has_public_ip();
-  inline void clear_has_public_ip();
   inline void set_has_ugc_map_id();
   inline void clear_has_ugc_map_id();
-  inline void set_has_allow_loose_file_loads();
-  inline void clear_has_allow_loose_file_loads();
-  inline void set_has_allow_user_workshop_content();
-  inline void clear_has_allow_user_workshop_content();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::int32 protocol_;
   ::google::protobuf::int32 server_count_;
   bool is_dedicated_;
-  bool is_official_valve_server_;
+  bool is_official_;
+  bool is_protected_;
   bool is_hltv_;
-  bool is_replay_;
+  bool is_redirecting_to_proxy_relay_;
   ::google::protobuf::int32 c_os_;
-  ::google::protobuf::uint32 map_crc_;
-  ::google::protobuf::uint32 client_crc_;
+  ::google::protobuf::uint32 worldmap_crc_;
   ::google::protobuf::uint32 string_table_crc_;
   ::google::protobuf::int32 max_clients_;
   ::google::protobuf::int32 max_classes_;
   ::google::protobuf::int32 player_slot_;
   ::std::string* game_dir_;
   ::std::string* map_name_;
-  float tick_interval_;
-  bool is_redirecting_to_proxy_relay_;
-  bool allow_loose_file_loads_;
-  bool allow_user_workshop_content_;
   ::std::string* map_group_name_;
-  ::std::string* sky_name_;
   ::std::string* host_name_;
   ::google::protobuf::uint64 ugc_map_id_;
-  ::google::protobuf::uint32 public_ip_;
+  float tick_interval_;
 
   mutable int _cached_size_;
-  ::google::protobuf::uint32 _has_bits_[(24 + 31) / 32];
+  ::google::protobuf::uint32 _has_bits_[(19 + 31) / 32];
 
   friend void  protobuf_AddDesc_netmessages_2eproto();
   friend void protobuf_AssignDesc_netmessages_2eproto();
@@ -3902,6 +3427,98 @@ class CSVCMsg_SetPause : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static CSVCMsg_SetPause* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CSVCMsg_SetPauseTimed : public ::google::protobuf::Message {
+ public:
+  CSVCMsg_SetPauseTimed();
+  virtual ~CSVCMsg_SetPauseTimed();
+
+  CSVCMsg_SetPauseTimed(const CSVCMsg_SetPauseTimed& from);
+
+  inline CSVCMsg_SetPauseTimed& operator=(const CSVCMsg_SetPauseTimed& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CSVCMsg_SetPauseTimed& default_instance();
+
+  void Swap(CSVCMsg_SetPauseTimed* other);
+
+  // implements Message ----------------------------------------------
+
+  CSVCMsg_SetPauseTimed* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CSVCMsg_SetPauseTimed& from);
+  void MergeFrom(const CSVCMsg_SetPauseTimed& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional bool paused = 1;
+  inline bool has_paused() const;
+  inline void clear_paused();
+  static const int kPausedFieldNumber = 1;
+  inline bool paused() const;
+  inline void set_paused(bool value);
+
+  // optional float expire_time = 2;
+  inline bool has_expire_time() const;
+  inline void clear_expire_time();
+  static const int kExpireTimeFieldNumber = 2;
+  inline float expire_time() const;
+  inline void set_expire_time(float value);
+
+  // @@protoc_insertion_point(class_scope:CSVCMsg_SetPauseTimed)
+ private:
+  inline void set_has_paused();
+  inline void clear_has_paused();
+  inline void set_has_expire_time();
+  inline void clear_has_expire_time();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  bool paused_;
+  float expire_time_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(2 + 31) / 32];
+
+  friend void  protobuf_AddDesc_netmessages_2eproto();
+  friend void protobuf_AssignDesc_netmessages_2eproto();
+  friend void protobuf_ShutdownFile_netmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CSVCMsg_SetPauseTimed* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -7511,286 +7128,6 @@ class CSVCMsg_HltvFixupOperatorStatus : public ::google::protobuf::Message {
 
 // ===================================================================
 
-// CMsgVector
-
-// optional float x = 1;
-inline bool CMsgVector::has_x() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgVector::set_has_x() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgVector::clear_has_x() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgVector::clear_x() {
-  x_ = 0;
-  clear_has_x();
-}
-inline float CMsgVector::x() const {
-  return x_;
-}
-inline void CMsgVector::set_x(float value) {
-  set_has_x();
-  x_ = value;
-}
-
-// optional float y = 2;
-inline bool CMsgVector::has_y() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgVector::set_has_y() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgVector::clear_has_y() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgVector::clear_y() {
-  y_ = 0;
-  clear_has_y();
-}
-inline float CMsgVector::y() const {
-  return y_;
-}
-inline void CMsgVector::set_y(float value) {
-  set_has_y();
-  y_ = value;
-}
-
-// optional float z = 3;
-inline bool CMsgVector::has_z() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgVector::set_has_z() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgVector::clear_has_z() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgVector::clear_z() {
-  z_ = 0;
-  clear_has_z();
-}
-inline float CMsgVector::z() const {
-  return z_;
-}
-inline void CMsgVector::set_z(float value) {
-  set_has_z();
-  z_ = value;
-}
-
-// -------------------------------------------------------------------
-
-// CMsgVector2D
-
-// optional float x = 1;
-inline bool CMsgVector2D::has_x() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgVector2D::set_has_x() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgVector2D::clear_has_x() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgVector2D::clear_x() {
-  x_ = 0;
-  clear_has_x();
-}
-inline float CMsgVector2D::x() const {
-  return x_;
-}
-inline void CMsgVector2D::set_x(float value) {
-  set_has_x();
-  x_ = value;
-}
-
-// optional float y = 2;
-inline bool CMsgVector2D::has_y() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgVector2D::set_has_y() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgVector2D::clear_has_y() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgVector2D::clear_y() {
-  y_ = 0;
-  clear_has_y();
-}
-inline float CMsgVector2D::y() const {
-  return y_;
-}
-inline void CMsgVector2D::set_y(float value) {
-  set_has_y();
-  y_ = value;
-}
-
-// -------------------------------------------------------------------
-
-// CMsgQAngle
-
-// optional float x = 1;
-inline bool CMsgQAngle::has_x() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgQAngle::set_has_x() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgQAngle::clear_has_x() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgQAngle::clear_x() {
-  x_ = 0;
-  clear_has_x();
-}
-inline float CMsgQAngle::x() const {
-  return x_;
-}
-inline void CMsgQAngle::set_x(float value) {
-  set_has_x();
-  x_ = value;
-}
-
-// optional float y = 2;
-inline bool CMsgQAngle::has_y() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgQAngle::set_has_y() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgQAngle::clear_has_y() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgQAngle::clear_y() {
-  y_ = 0;
-  clear_has_y();
-}
-inline float CMsgQAngle::y() const {
-  return y_;
-}
-inline void CMsgQAngle::set_y(float value) {
-  set_has_y();
-  y_ = value;
-}
-
-// optional float z = 3;
-inline bool CMsgQAngle::has_z() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgQAngle::set_has_z() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgQAngle::clear_has_z() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgQAngle::clear_z() {
-  z_ = 0;
-  clear_has_z();
-}
-inline float CMsgQAngle::z() const {
-  return z_;
-}
-inline void CMsgQAngle::set_z(float value) {
-  set_has_z();
-  z_ = value;
-}
-
-// -------------------------------------------------------------------
-
-// CMsgRGBA
-
-// optional int32 r = 1;
-inline bool CMsgRGBA::has_r() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgRGBA::set_has_r() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgRGBA::clear_has_r() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgRGBA::clear_r() {
-  r_ = 0;
-  clear_has_r();
-}
-inline ::google::protobuf::int32 CMsgRGBA::r() const {
-  return r_;
-}
-inline void CMsgRGBA::set_r(::google::protobuf::int32 value) {
-  set_has_r();
-  r_ = value;
-}
-
-// optional int32 g = 2;
-inline bool CMsgRGBA::has_g() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgRGBA::set_has_g() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgRGBA::clear_has_g() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgRGBA::clear_g() {
-  g_ = 0;
-  clear_has_g();
-}
-inline ::google::protobuf::int32 CMsgRGBA::g() const {
-  return g_;
-}
-inline void CMsgRGBA::set_g(::google::protobuf::int32 value) {
-  set_has_g();
-  g_ = value;
-}
-
-// optional int32 b = 3;
-inline bool CMsgRGBA::has_b() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgRGBA::set_has_b() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgRGBA::clear_has_b() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgRGBA::clear_b() {
-  b_ = 0;
-  clear_has_b();
-}
-inline ::google::protobuf::int32 CMsgRGBA::b() const {
-  return b_;
-}
-inline void CMsgRGBA::set_b(::google::protobuf::int32 value) {
-  set_has_b();
-  b_ = value;
-}
-
-// optional int32 a = 4;
-inline bool CMsgRGBA::has_a() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void CMsgRGBA::set_has_a() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void CMsgRGBA::clear_has_a() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void CMsgRGBA::clear_a() {
-  a_ = 0;
-  clear_has_a();
-}
-inline ::google::protobuf::int32 CMsgRGBA::a() const {
-  return a_;
-}
-inline void CMsgRGBA::set_a(::google::protobuf::int32 value) {
-  set_has_a();
-  a_ = value;
-}
-
-// -------------------------------------------------------------------
-
 // CNETMsg_Tick
 
 // optional uint32 tick = 1;
@@ -8808,37 +8145,15 @@ inline void CCLCMsg_ClientInfo::set_is_hltv(bool value) {
   is_hltv_ = value;
 }
 
-// optional bool is_replay = 4;
-inline bool CCLCMsg_ClientInfo::has_is_replay() const {
+// optional uint32 friends_id = 4;
+inline bool CCLCMsg_ClientInfo::has_friends_id() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void CCLCMsg_ClientInfo::set_has_is_replay() {
+inline void CCLCMsg_ClientInfo::set_has_friends_id() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void CCLCMsg_ClientInfo::clear_has_is_replay() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void CCLCMsg_ClientInfo::clear_is_replay() {
-  is_replay_ = false;
-  clear_has_is_replay();
-}
-inline bool CCLCMsg_ClientInfo::is_replay() const {
-  return is_replay_;
-}
-inline void CCLCMsg_ClientInfo::set_is_replay(bool value) {
-  set_has_is_replay();
-  is_replay_ = value;
-}
-
-// optional uint32 friends_id = 5;
-inline bool CCLCMsg_ClientInfo::has_friends_id() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-inline void CCLCMsg_ClientInfo::set_has_friends_id() {
-  _has_bits_[0] |= 0x00000010u;
-}
 inline void CCLCMsg_ClientInfo::clear_has_friends_id() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void CCLCMsg_ClientInfo::clear_friends_id() {
   friends_id_ = 0u;
@@ -8852,15 +8167,15 @@ inline void CCLCMsg_ClientInfo::set_friends_id(::google::protobuf::uint32 value)
   friends_id_ = value;
 }
 
-// optional string friends_name = 6;
+// optional string friends_name = 5;
 inline bool CCLCMsg_ClientInfo::has_friends_name() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void CCLCMsg_ClientInfo::set_has_friends_name() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void CCLCMsg_ClientInfo::clear_has_friends_name() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void CCLCMsg_ClientInfo::clear_friends_name() {
   if (friends_name_ != &::google::protobuf::internal::kEmptyString) {
@@ -8922,7 +8237,7 @@ inline void CCLCMsg_ClientInfo::set_allocated_friends_name(::std::string* friend
   }
 }
 
-// repeated fixed32 custom_files = 7;
+// repeated fixed32 custom_files = 6;
 inline int CCLCMsg_ClientInfo::custom_files_size() const {
   return custom_files_.size();
 }
@@ -10117,37 +9432,59 @@ inline void CSVCMsg_ServerInfo::set_is_dedicated(bool value) {
   is_dedicated_ = value;
 }
 
-// optional bool is_official_valve_server = 4;
-inline bool CSVCMsg_ServerInfo::has_is_official_valve_server() const {
+// optional bool is_official = 4;
+inline bool CSVCMsg_ServerInfo::has_is_official() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void CSVCMsg_ServerInfo::set_has_is_official_valve_server() {
+inline void CSVCMsg_ServerInfo::set_has_is_official() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void CSVCMsg_ServerInfo::clear_has_is_official_valve_server() {
+inline void CSVCMsg_ServerInfo::clear_has_is_official() {
   _has_bits_[0] &= ~0x00000008u;
 }
-inline void CSVCMsg_ServerInfo::clear_is_official_valve_server() {
-  is_official_valve_server_ = false;
-  clear_has_is_official_valve_server();
+inline void CSVCMsg_ServerInfo::clear_is_official() {
+  is_official_ = false;
+  clear_has_is_official();
 }
-inline bool CSVCMsg_ServerInfo::is_official_valve_server() const {
-  return is_official_valve_server_;
+inline bool CSVCMsg_ServerInfo::is_official() const {
+  return is_official_;
 }
-inline void CSVCMsg_ServerInfo::set_is_official_valve_server(bool value) {
-  set_has_is_official_valve_server();
-  is_official_valve_server_ = value;
+inline void CSVCMsg_ServerInfo::set_is_official(bool value) {
+  set_has_is_official();
+  is_official_ = value;
 }
 
-// optional bool is_hltv = 5;
-inline bool CSVCMsg_ServerInfo::has_is_hltv() const {
+// optional bool is_protected = 5;
+inline bool CSVCMsg_ServerInfo::has_is_protected() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void CSVCMsg_ServerInfo::set_has_is_hltv() {
+inline void CSVCMsg_ServerInfo::set_has_is_protected() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void CSVCMsg_ServerInfo::clear_has_is_hltv() {
+inline void CSVCMsg_ServerInfo::clear_has_is_protected() {
   _has_bits_[0] &= ~0x00000010u;
+}
+inline void CSVCMsg_ServerInfo::clear_is_protected() {
+  is_protected_ = false;
+  clear_has_is_protected();
+}
+inline bool CSVCMsg_ServerInfo::is_protected() const {
+  return is_protected_;
+}
+inline void CSVCMsg_ServerInfo::set_is_protected(bool value) {
+  set_has_is_protected();
+  is_protected_ = value;
+}
+
+// optional bool is_hltv = 6;
+inline bool CSVCMsg_ServerInfo::has_is_hltv() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CSVCMsg_ServerInfo::set_has_is_hltv() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CSVCMsg_ServerInfo::clear_has_is_hltv() {
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void CSVCMsg_ServerInfo::clear_is_hltv() {
   is_hltv_ = false;
@@ -10161,29 +9498,7 @@ inline void CSVCMsg_ServerInfo::set_is_hltv(bool value) {
   is_hltv_ = value;
 }
 
-// optional bool is_replay = 6;
-inline bool CSVCMsg_ServerInfo::has_is_replay() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-inline void CSVCMsg_ServerInfo::set_has_is_replay() {
-  _has_bits_[0] |= 0x00000020u;
-}
-inline void CSVCMsg_ServerInfo::clear_has_is_replay() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-inline void CSVCMsg_ServerInfo::clear_is_replay() {
-  is_replay_ = false;
-  clear_has_is_replay();
-}
-inline bool CSVCMsg_ServerInfo::is_replay() const {
-  return is_replay_;
-}
-inline void CSVCMsg_ServerInfo::set_is_replay(bool value) {
-  set_has_is_replay();
-  is_replay_ = value;
-}
-
-// optional bool is_redirecting_to_proxy_relay = 21;
+// optional bool is_redirecting_to_proxy_relay = 7;
 inline bool CSVCMsg_ServerInfo::has_is_redirecting_to_proxy_relay() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
@@ -10205,7 +9520,7 @@ inline void CSVCMsg_ServerInfo::set_is_redirecting_to_proxy_relay(bool value) {
   is_redirecting_to_proxy_relay_ = value;
 }
 
-// optional int32 c_os = 7;
+// optional int32 c_os = 8;
 inline bool CSVCMsg_ServerInfo::has_c_os() const {
   return (_has_bits_[0] & 0x00000080u) != 0;
 }
@@ -10227,59 +9542,37 @@ inline void CSVCMsg_ServerInfo::set_c_os(::google::protobuf::int32 value) {
   c_os_ = value;
 }
 
-// optional fixed32 map_crc = 8;
-inline bool CSVCMsg_ServerInfo::has_map_crc() const {
+// optional fixed32 worldmap_crc = 9;
+inline bool CSVCMsg_ServerInfo::has_worldmap_crc() const {
   return (_has_bits_[0] & 0x00000100u) != 0;
 }
-inline void CSVCMsg_ServerInfo::set_has_map_crc() {
+inline void CSVCMsg_ServerInfo::set_has_worldmap_crc() {
   _has_bits_[0] |= 0x00000100u;
 }
-inline void CSVCMsg_ServerInfo::clear_has_map_crc() {
+inline void CSVCMsg_ServerInfo::clear_has_worldmap_crc() {
   _has_bits_[0] &= ~0x00000100u;
 }
-inline void CSVCMsg_ServerInfo::clear_map_crc() {
-  map_crc_ = 0u;
-  clear_has_map_crc();
+inline void CSVCMsg_ServerInfo::clear_worldmap_crc() {
+  worldmap_crc_ = 0u;
+  clear_has_worldmap_crc();
 }
-inline ::google::protobuf::uint32 CSVCMsg_ServerInfo::map_crc() const {
-  return map_crc_;
+inline ::google::protobuf::uint32 CSVCMsg_ServerInfo::worldmap_crc() const {
+  return worldmap_crc_;
 }
-inline void CSVCMsg_ServerInfo::set_map_crc(::google::protobuf::uint32 value) {
-  set_has_map_crc();
-  map_crc_ = value;
-}
-
-// optional fixed32 client_crc = 9;
-inline bool CSVCMsg_ServerInfo::has_client_crc() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
-}
-inline void CSVCMsg_ServerInfo::set_has_client_crc() {
-  _has_bits_[0] |= 0x00000200u;
-}
-inline void CSVCMsg_ServerInfo::clear_has_client_crc() {
-  _has_bits_[0] &= ~0x00000200u;
-}
-inline void CSVCMsg_ServerInfo::clear_client_crc() {
-  client_crc_ = 0u;
-  clear_has_client_crc();
-}
-inline ::google::protobuf::uint32 CSVCMsg_ServerInfo::client_crc() const {
-  return client_crc_;
-}
-inline void CSVCMsg_ServerInfo::set_client_crc(::google::protobuf::uint32 value) {
-  set_has_client_crc();
-  client_crc_ = value;
+inline void CSVCMsg_ServerInfo::set_worldmap_crc(::google::protobuf::uint32 value) {
+  set_has_worldmap_crc();
+  worldmap_crc_ = value;
 }
 
 // optional fixed32 string_table_crc = 10;
 inline bool CSVCMsg_ServerInfo::has_string_table_crc() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
+  return (_has_bits_[0] & 0x00000200u) != 0;
 }
 inline void CSVCMsg_ServerInfo::set_has_string_table_crc() {
-  _has_bits_[0] |= 0x00000400u;
+  _has_bits_[0] |= 0x00000200u;
 }
 inline void CSVCMsg_ServerInfo::clear_has_string_table_crc() {
-  _has_bits_[0] &= ~0x00000400u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline void CSVCMsg_ServerInfo::clear_string_table_crc() {
   string_table_crc_ = 0u;
@@ -10295,13 +9588,13 @@ inline void CSVCMsg_ServerInfo::set_string_table_crc(::google::protobuf::uint32 
 
 // optional int32 max_clients = 11;
 inline bool CSVCMsg_ServerInfo::has_max_clients() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
+  return (_has_bits_[0] & 0x00000400u) != 0;
 }
 inline void CSVCMsg_ServerInfo::set_has_max_clients() {
-  _has_bits_[0] |= 0x00000800u;
+  _has_bits_[0] |= 0x00000400u;
 }
 inline void CSVCMsg_ServerInfo::clear_has_max_clients() {
-  _has_bits_[0] &= ~0x00000800u;
+  _has_bits_[0] &= ~0x00000400u;
 }
 inline void CSVCMsg_ServerInfo::clear_max_clients() {
   max_clients_ = 0;
@@ -10317,13 +9610,13 @@ inline void CSVCMsg_ServerInfo::set_max_clients(::google::protobuf::int32 value)
 
 // optional int32 max_classes = 12;
 inline bool CSVCMsg_ServerInfo::has_max_classes() const {
-  return (_has_bits_[0] & 0x00001000u) != 0;
+  return (_has_bits_[0] & 0x00000800u) != 0;
 }
 inline void CSVCMsg_ServerInfo::set_has_max_classes() {
-  _has_bits_[0] |= 0x00001000u;
+  _has_bits_[0] |= 0x00000800u;
 }
 inline void CSVCMsg_ServerInfo::clear_has_max_classes() {
-  _has_bits_[0] &= ~0x00001000u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 inline void CSVCMsg_ServerInfo::clear_max_classes() {
   max_classes_ = 0;
@@ -10339,13 +9632,13 @@ inline void CSVCMsg_ServerInfo::set_max_classes(::google::protobuf::int32 value)
 
 // optional int32 player_slot = 13;
 inline bool CSVCMsg_ServerInfo::has_player_slot() const {
-  return (_has_bits_[0] & 0x00002000u) != 0;
+  return (_has_bits_[0] & 0x00001000u) != 0;
 }
 inline void CSVCMsg_ServerInfo::set_has_player_slot() {
-  _has_bits_[0] |= 0x00002000u;
+  _has_bits_[0] |= 0x00001000u;
 }
 inline void CSVCMsg_ServerInfo::clear_has_player_slot() {
-  _has_bits_[0] &= ~0x00002000u;
+  _has_bits_[0] &= ~0x00001000u;
 }
 inline void CSVCMsg_ServerInfo::clear_player_slot() {
   player_slot_ = 0;
@@ -10361,13 +9654,13 @@ inline void CSVCMsg_ServerInfo::set_player_slot(::google::protobuf::int32 value)
 
 // optional float tick_interval = 14;
 inline bool CSVCMsg_ServerInfo::has_tick_interval() const {
-  return (_has_bits_[0] & 0x00004000u) != 0;
+  return (_has_bits_[0] & 0x00002000u) != 0;
 }
 inline void CSVCMsg_ServerInfo::set_has_tick_interval() {
-  _has_bits_[0] |= 0x00004000u;
+  _has_bits_[0] |= 0x00002000u;
 }
 inline void CSVCMsg_ServerInfo::clear_has_tick_interval() {
-  _has_bits_[0] &= ~0x00004000u;
+  _has_bits_[0] &= ~0x00002000u;
 }
 inline void CSVCMsg_ServerInfo::clear_tick_interval() {
   tick_interval_ = 0;
@@ -10383,13 +9676,13 @@ inline void CSVCMsg_ServerInfo::set_tick_interval(float value) {
 
 // optional string game_dir = 15;
 inline bool CSVCMsg_ServerInfo::has_game_dir() const {
-  return (_has_bits_[0] & 0x00008000u) != 0;
+  return (_has_bits_[0] & 0x00004000u) != 0;
 }
 inline void CSVCMsg_ServerInfo::set_has_game_dir() {
-  _has_bits_[0] |= 0x00008000u;
+  _has_bits_[0] |= 0x00004000u;
 }
 inline void CSVCMsg_ServerInfo::clear_has_game_dir() {
-  _has_bits_[0] &= ~0x00008000u;
+  _has_bits_[0] &= ~0x00004000u;
 }
 inline void CSVCMsg_ServerInfo::clear_game_dir() {
   if (game_dir_ != &::google::protobuf::internal::kEmptyString) {
@@ -10453,13 +9746,13 @@ inline void CSVCMsg_ServerInfo::set_allocated_game_dir(::std::string* game_dir) 
 
 // optional string map_name = 16;
 inline bool CSVCMsg_ServerInfo::has_map_name() const {
-  return (_has_bits_[0] & 0x00010000u) != 0;
+  return (_has_bits_[0] & 0x00008000u) != 0;
 }
 inline void CSVCMsg_ServerInfo::set_has_map_name() {
-  _has_bits_[0] |= 0x00010000u;
+  _has_bits_[0] |= 0x00008000u;
 }
 inline void CSVCMsg_ServerInfo::clear_has_map_name() {
-  _has_bits_[0] &= ~0x00010000u;
+  _has_bits_[0] &= ~0x00008000u;
 }
 inline void CSVCMsg_ServerInfo::clear_map_name() {
   if (map_name_ != &::google::protobuf::internal::kEmptyString) {
@@ -10523,13 +9816,13 @@ inline void CSVCMsg_ServerInfo::set_allocated_map_name(::std::string* map_name) 
 
 // optional string map_group_name = 17;
 inline bool CSVCMsg_ServerInfo::has_map_group_name() const {
-  return (_has_bits_[0] & 0x00020000u) != 0;
+  return (_has_bits_[0] & 0x00010000u) != 0;
 }
 inline void CSVCMsg_ServerInfo::set_has_map_group_name() {
-  _has_bits_[0] |= 0x00020000u;
+  _has_bits_[0] |= 0x00010000u;
 }
 inline void CSVCMsg_ServerInfo::clear_has_map_group_name() {
-  _has_bits_[0] &= ~0x00020000u;
+  _has_bits_[0] &= ~0x00010000u;
 }
 inline void CSVCMsg_ServerInfo::clear_map_group_name() {
   if (map_group_name_ != &::google::protobuf::internal::kEmptyString) {
@@ -10591,85 +9884,15 @@ inline void CSVCMsg_ServerInfo::set_allocated_map_group_name(::std::string* map_
   }
 }
 
-// optional string sky_name = 18;
-inline bool CSVCMsg_ServerInfo::has_sky_name() const {
-  return (_has_bits_[0] & 0x00040000u) != 0;
-}
-inline void CSVCMsg_ServerInfo::set_has_sky_name() {
-  _has_bits_[0] |= 0x00040000u;
-}
-inline void CSVCMsg_ServerInfo::clear_has_sky_name() {
-  _has_bits_[0] &= ~0x00040000u;
-}
-inline void CSVCMsg_ServerInfo::clear_sky_name() {
-  if (sky_name_ != &::google::protobuf::internal::kEmptyString) {
-    sky_name_->clear();
-  }
-  clear_has_sky_name();
-}
-inline const ::std::string& CSVCMsg_ServerInfo::sky_name() const {
-  return *sky_name_;
-}
-inline void CSVCMsg_ServerInfo::set_sky_name(const ::std::string& value) {
-  set_has_sky_name();
-  if (sky_name_ == &::google::protobuf::internal::kEmptyString) {
-    sky_name_ = new ::std::string;
-  }
-  sky_name_->assign(value);
-}
-inline void CSVCMsg_ServerInfo::set_sky_name(const char* value) {
-  set_has_sky_name();
-  if (sky_name_ == &::google::protobuf::internal::kEmptyString) {
-    sky_name_ = new ::std::string;
-  }
-  sky_name_->assign(value);
-}
-inline void CSVCMsg_ServerInfo::set_sky_name(const char* value, size_t size) {
-  set_has_sky_name();
-  if (sky_name_ == &::google::protobuf::internal::kEmptyString) {
-    sky_name_ = new ::std::string;
-  }
-  sky_name_->assign(reinterpret_cast<const char*>(value), size);
-}
-inline ::std::string* CSVCMsg_ServerInfo::mutable_sky_name() {
-  set_has_sky_name();
-  if (sky_name_ == &::google::protobuf::internal::kEmptyString) {
-    sky_name_ = new ::std::string;
-  }
-  return sky_name_;
-}
-inline ::std::string* CSVCMsg_ServerInfo::release_sky_name() {
-  clear_has_sky_name();
-  if (sky_name_ == &::google::protobuf::internal::kEmptyString) {
-    return NULL;
-  } else {
-    ::std::string* temp = sky_name_;
-    sky_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-    return temp;
-  }
-}
-inline void CSVCMsg_ServerInfo::set_allocated_sky_name(::std::string* sky_name) {
-  if (sky_name_ != &::google::protobuf::internal::kEmptyString) {
-    delete sky_name_;
-  }
-  if (sky_name) {
-    set_has_sky_name();
-    sky_name_ = sky_name;
-  } else {
-    clear_has_sky_name();
-    sky_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  }
-}
-
-// optional string host_name = 19;
+// optional string host_name = 18;
 inline bool CSVCMsg_ServerInfo::has_host_name() const {
-  return (_has_bits_[0] & 0x00080000u) != 0;
+  return (_has_bits_[0] & 0x00020000u) != 0;
 }
 inline void CSVCMsg_ServerInfo::set_has_host_name() {
-  _has_bits_[0] |= 0x00080000u;
+  _has_bits_[0] |= 0x00020000u;
 }
 inline void CSVCMsg_ServerInfo::clear_has_host_name() {
-  _has_bits_[0] &= ~0x00080000u;
+  _has_bits_[0] &= ~0x00020000u;
 }
 inline void CSVCMsg_ServerInfo::clear_host_name() {
   if (host_name_ != &::google::protobuf::internal::kEmptyString) {
@@ -10731,37 +9954,15 @@ inline void CSVCMsg_ServerInfo::set_allocated_host_name(::std::string* host_name
   }
 }
 
-// optional uint32 public_ip = 20;
-inline bool CSVCMsg_ServerInfo::has_public_ip() const {
-  return (_has_bits_[0] & 0x00100000u) != 0;
-}
-inline void CSVCMsg_ServerInfo::set_has_public_ip() {
-  _has_bits_[0] |= 0x00100000u;
-}
-inline void CSVCMsg_ServerInfo::clear_has_public_ip() {
-  _has_bits_[0] &= ~0x00100000u;
-}
-inline void CSVCMsg_ServerInfo::clear_public_ip() {
-  public_ip_ = 0u;
-  clear_has_public_ip();
-}
-inline ::google::protobuf::uint32 CSVCMsg_ServerInfo::public_ip() const {
-  return public_ip_;
-}
-inline void CSVCMsg_ServerInfo::set_public_ip(::google::protobuf::uint32 value) {
-  set_has_public_ip();
-  public_ip_ = value;
-}
-
-// optional uint64 ugc_map_id = 22;
+// optional uint64 ugc_map_id = 19;
 inline bool CSVCMsg_ServerInfo::has_ugc_map_id() const {
-  return (_has_bits_[0] & 0x00200000u) != 0;
+  return (_has_bits_[0] & 0x00040000u) != 0;
 }
 inline void CSVCMsg_ServerInfo::set_has_ugc_map_id() {
-  _has_bits_[0] |= 0x00200000u;
+  _has_bits_[0] |= 0x00040000u;
 }
 inline void CSVCMsg_ServerInfo::clear_has_ugc_map_id() {
-  _has_bits_[0] &= ~0x00200000u;
+  _has_bits_[0] &= ~0x00040000u;
 }
 inline void CSVCMsg_ServerInfo::clear_ugc_map_id() {
   ugc_map_id_ = GOOGLE_ULONGLONG(0);
@@ -10773,50 +9974,6 @@ inline ::google::protobuf::uint64 CSVCMsg_ServerInfo::ugc_map_id() const {
 inline void CSVCMsg_ServerInfo::set_ugc_map_id(::google::protobuf::uint64 value) {
   set_has_ugc_map_id();
   ugc_map_id_ = value;
-}
-
-// optional bool allow_loose_file_loads = 23;
-inline bool CSVCMsg_ServerInfo::has_allow_loose_file_loads() const {
-  return (_has_bits_[0] & 0x00400000u) != 0;
-}
-inline void CSVCMsg_ServerInfo::set_has_allow_loose_file_loads() {
-  _has_bits_[0] |= 0x00400000u;
-}
-inline void CSVCMsg_ServerInfo::clear_has_allow_loose_file_loads() {
-  _has_bits_[0] &= ~0x00400000u;
-}
-inline void CSVCMsg_ServerInfo::clear_allow_loose_file_loads() {
-  allow_loose_file_loads_ = false;
-  clear_has_allow_loose_file_loads();
-}
-inline bool CSVCMsg_ServerInfo::allow_loose_file_loads() const {
-  return allow_loose_file_loads_;
-}
-inline void CSVCMsg_ServerInfo::set_allow_loose_file_loads(bool value) {
-  set_has_allow_loose_file_loads();
-  allow_loose_file_loads_ = value;
-}
-
-// optional bool allow_user_workshop_content = 24;
-inline bool CSVCMsg_ServerInfo::has_allow_user_workshop_content() const {
-  return (_has_bits_[0] & 0x00800000u) != 0;
-}
-inline void CSVCMsg_ServerInfo::set_has_allow_user_workshop_content() {
-  _has_bits_[0] |= 0x00800000u;
-}
-inline void CSVCMsg_ServerInfo::clear_has_allow_user_workshop_content() {
-  _has_bits_[0] &= ~0x00800000u;
-}
-inline void CSVCMsg_ServerInfo::clear_allow_user_workshop_content() {
-  allow_user_workshop_content_ = false;
-  clear_has_allow_user_workshop_content();
-}
-inline bool CSVCMsg_ServerInfo::allow_user_workshop_content() const {
-  return allow_user_workshop_content_;
-}
-inline void CSVCMsg_ServerInfo::set_allow_user_workshop_content(bool value) {
-  set_has_allow_user_workshop_content();
-  allow_user_workshop_content_ = value;
 }
 
 // -------------------------------------------------------------------
@@ -11575,6 +10732,54 @@ inline bool CSVCMsg_SetPause::paused() const {
 inline void CSVCMsg_SetPause::set_paused(bool value) {
   set_has_paused();
   paused_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// CSVCMsg_SetPauseTimed
+
+// optional bool paused = 1;
+inline bool CSVCMsg_SetPauseTimed::has_paused() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CSVCMsg_SetPauseTimed::set_has_paused() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CSVCMsg_SetPauseTimed::clear_has_paused() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CSVCMsg_SetPauseTimed::clear_paused() {
+  paused_ = false;
+  clear_has_paused();
+}
+inline bool CSVCMsg_SetPauseTimed::paused() const {
+  return paused_;
+}
+inline void CSVCMsg_SetPauseTimed::set_paused(bool value) {
+  set_has_paused();
+  paused_ = value;
+}
+
+// optional float expire_time = 2;
+inline bool CSVCMsg_SetPauseTimed::has_expire_time() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CSVCMsg_SetPauseTimed::set_has_expire_time() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CSVCMsg_SetPauseTimed::clear_has_expire_time() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CSVCMsg_SetPauseTimed::clear_expire_time() {
+  expire_time_ = 0;
+  clear_has_expire_time();
+}
+inline float CSVCMsg_SetPauseTimed::expire_time() const {
+  return expire_time_;
+}
+inline void CSVCMsg_SetPauseTimed::set_expire_time(float value) {
+  set_has_expire_time();
+  expire_time_ = value;
 }
 
 // -------------------------------------------------------------------

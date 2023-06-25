@@ -18,18 +18,6 @@
 
 namespace {
 
-const ::google::protobuf::Descriptor* CMsgVector_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  CMsgVector_reflection_ = NULL;
-const ::google::protobuf::Descriptor* CMsgVector2D_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  CMsgVector2D_reflection_ = NULL;
-const ::google::protobuf::Descriptor* CMsgQAngle_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  CMsgQAngle_reflection_ = NULL;
-const ::google::protobuf::Descriptor* CMsgRGBA_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  CMsgRGBA_reflection_ = NULL;
 const ::google::protobuf::Descriptor* CNETMsg_Tick_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CNETMsg_Tick_reflection_ = NULL;
@@ -114,6 +102,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* CSVCMsg_SetPause_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CSVCMsg_SetPause_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CSVCMsg_SetPauseTimed_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CSVCMsg_SetPauseTimed_reflection_ = NULL;
 const ::google::protobuf::Descriptor* CSVCMsg_SetView_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CSVCMsg_SetView_reflection_ = NULL;
@@ -223,75 +214,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
     ::google::protobuf::DescriptorPool::generated_pool()->FindFileByName(
       "netmessages.proto");
   GOOGLE_CHECK(file != NULL);
-  CMsgVector_descriptor_ = file->message_type(0);
-  static const int CMsgVector_offsets_[3] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVector, x_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVector, y_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVector, z_),
-  };
-  CMsgVector_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      CMsgVector_descriptor_,
-      CMsgVector::default_instance_,
-      CMsgVector_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVector, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVector, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(CMsgVector));
-  CMsgVector2D_descriptor_ = file->message_type(1);
-  static const int CMsgVector2D_offsets_[2] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVector2D, x_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVector2D, y_),
-  };
-  CMsgVector2D_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      CMsgVector2D_descriptor_,
-      CMsgVector2D::default_instance_,
-      CMsgVector2D_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVector2D, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVector2D, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(CMsgVector2D));
-  CMsgQAngle_descriptor_ = file->message_type(2);
-  static const int CMsgQAngle_offsets_[3] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgQAngle, x_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgQAngle, y_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgQAngle, z_),
-  };
-  CMsgQAngle_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      CMsgQAngle_descriptor_,
-      CMsgQAngle::default_instance_,
-      CMsgQAngle_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgQAngle, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgQAngle, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(CMsgQAngle));
-  CMsgRGBA_descriptor_ = file->message_type(3);
-  static const int CMsgRGBA_offsets_[4] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRGBA, r_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRGBA, g_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRGBA, b_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRGBA, a_),
-  };
-  CMsgRGBA_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      CMsgRGBA_descriptor_,
-      CMsgRGBA::default_instance_,
-      CMsgRGBA_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRGBA, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRGBA, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(CMsgRGBA));
-  CNETMsg_Tick_descriptor_ = file->message_type(4);
+  CNETMsg_Tick_descriptor_ = file->message_type(0);
   static const int CNETMsg_Tick_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_Tick, tick_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_Tick, host_computationtime_),
@@ -310,7 +233,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CNETMsg_Tick));
-  CNETMsg_StringCmd_descriptor_ = file->message_type(5);
+  CNETMsg_StringCmd_descriptor_ = file->message_type(1);
   static const int CNETMsg_StringCmd_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_StringCmd, command_),
   };
@@ -325,7 +248,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CNETMsg_StringCmd));
-  CNETMsg_SignonState_descriptor_ = file->message_type(6);
+  CNETMsg_SignonState_descriptor_ = file->message_type(2);
   static const int CNETMsg_SignonState_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SignonState, signon_state_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SignonState, spawn_count_),
@@ -344,7 +267,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CNETMsg_SignonState));
-  CMsg_CVars_descriptor_ = file->message_type(7);
+  CMsg_CVars_descriptor_ = file->message_type(3);
   static const int CMsg_CVars_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg_CVars, cvars_),
   };
@@ -376,7 +299,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsg_CVars_CVar));
-  CNETMsg_SetConVar_descriptor_ = file->message_type(8);
+  CNETMsg_SetConVar_descriptor_ = file->message_type(4);
   static const int CNETMsg_SetConVar_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SetConVar, convars_),
   };
@@ -391,7 +314,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CNETMsg_SetConVar));
-  CNETMsg_NOP_descriptor_ = file->message_type(9);
+  CNETMsg_NOP_descriptor_ = file->message_type(5);
   static const int CNETMsg_NOP_offsets_[1] = {
   };
   CNETMsg_NOP_reflection_ =
@@ -405,7 +328,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CNETMsg_NOP));
-  CNETMsg_Disconnect_descriptor_ = file->message_type(10);
+  CNETMsg_Disconnect_descriptor_ = file->message_type(6);
   static const int CNETMsg_Disconnect_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_Disconnect, text_),
   };
@@ -420,7 +343,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CNETMsg_Disconnect));
-  CNETMsg_File_descriptor_ = file->message_type(11);
+  CNETMsg_File_descriptor_ = file->message_type(7);
   static const int CNETMsg_File_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_File, transfer_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_File, file_name_),
@@ -438,7 +361,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CNETMsg_File));
-  CNETMsg_SplitScreenUser_descriptor_ = file->message_type(12);
+  CNETMsg_SplitScreenUser_descriptor_ = file->message_type(8);
   static const int CNETMsg_SplitScreenUser_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SplitScreenUser, slot_),
   };
@@ -453,7 +376,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CNETMsg_SplitScreenUser));
-  CNETMsg_PlayerAvatarData_descriptor_ = file->message_type(13);
+  CNETMsg_PlayerAvatarData_descriptor_ = file->message_type(9);
   static const int CNETMsg_PlayerAvatarData_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_PlayerAvatarData, accountid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_PlayerAvatarData, rgb_),
@@ -469,12 +392,11 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CNETMsg_PlayerAvatarData));
-  CCLCMsg_ClientInfo_descriptor_ = file->message_type(14);
-  static const int CCLCMsg_ClientInfo_offsets_[7] = {
+  CCLCMsg_ClientInfo_descriptor_ = file->message_type(10);
+  static const int CCLCMsg_ClientInfo_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_ClientInfo, send_table_crc_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_ClientInfo, server_count_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_ClientInfo, is_hltv_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_ClientInfo, is_replay_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_ClientInfo, friends_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_ClientInfo, friends_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_ClientInfo, custom_files_),
@@ -490,7 +412,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CCLCMsg_ClientInfo));
-  CCLCMsg_Move_descriptor_ = file->message_type(15);
+  CCLCMsg_Move_descriptor_ = file->message_type(11);
   static const int CCLCMsg_Move_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_Move, num_backup_commands_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_Move, num_new_commands_),
@@ -507,7 +429,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CCLCMsg_Move));
-  CCLCMsg_VoiceData_descriptor_ = file->message_type(16);
+  CCLCMsg_VoiceData_descriptor_ = file->message_type(12);
   static const int CCLCMsg_VoiceData_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_VoiceData, data_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_VoiceData, xuid_),
@@ -527,7 +449,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CCLCMsg_VoiceData));
-  CCLCMsg_BaselineAck_descriptor_ = file->message_type(17);
+  CCLCMsg_BaselineAck_descriptor_ = file->message_type(13);
   static const int CCLCMsg_BaselineAck_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_BaselineAck, baseline_tick_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_BaselineAck, baseline_nr_),
@@ -543,7 +465,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CCLCMsg_BaselineAck));
-  CCLCMsg_ListenEvents_descriptor_ = file->message_type(18);
+  CCLCMsg_ListenEvents_descriptor_ = file->message_type(14);
   static const int CCLCMsg_ListenEvents_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_ListenEvents, event_mask_),
   };
@@ -558,7 +480,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CCLCMsg_ListenEvents));
-  CCLCMsg_RespondCvarValue_descriptor_ = file->message_type(19);
+  CCLCMsg_RespondCvarValue_descriptor_ = file->message_type(15);
   static const int CCLCMsg_RespondCvarValue_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_RespondCvarValue, cookie_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_RespondCvarValue, status_code_),
@@ -576,7 +498,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CCLCMsg_RespondCvarValue));
-  CCLCMsg_FileCRCCheck_descriptor_ = file->message_type(20);
+  CCLCMsg_FileCRCCheck_descriptor_ = file->message_type(16);
   static const int CCLCMsg_FileCRCCheck_offsets_[11] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_FileCRCCheck, code_path_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_FileCRCCheck, path_),
@@ -601,7 +523,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CCLCMsg_FileCRCCheck));
-  CCLCMsg_LoadingProgress_descriptor_ = file->message_type(21);
+  CCLCMsg_LoadingProgress_descriptor_ = file->message_type(17);
   static const int CCLCMsg_LoadingProgress_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_LoadingProgress, progress_),
   };
@@ -616,7 +538,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CCLCMsg_LoadingProgress));
-  CCLCMsg_SplitPlayerConnect_descriptor_ = file->message_type(22);
+  CCLCMsg_SplitPlayerConnect_descriptor_ = file->message_type(18);
   static const int CCLCMsg_SplitPlayerConnect_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_SplitPlayerConnect, convars_),
   };
@@ -631,7 +553,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CCLCMsg_SplitPlayerConnect));
-  CCLCMsg_CmdKeyValues_descriptor_ = file->message_type(23);
+  CCLCMsg_CmdKeyValues_descriptor_ = file->message_type(19);
   static const int CCLCMsg_CmdKeyValues_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_CmdKeyValues, keyvalues_),
   };
@@ -646,18 +568,17 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CCLCMsg_CmdKeyValues));
-  CSVCMsg_ServerInfo_descriptor_ = file->message_type(24);
-  static const int CSVCMsg_ServerInfo_offsets_[24] = {
+  CSVCMsg_ServerInfo_descriptor_ = file->message_type(20);
+  static const int CSVCMsg_ServerInfo_offsets_[19] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, protocol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, server_count_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, is_dedicated_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, is_official_valve_server_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, is_official_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, is_protected_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, is_hltv_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, is_replay_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, is_redirecting_to_proxy_relay_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, c_os_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, map_crc_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, client_crc_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, worldmap_crc_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, string_table_crc_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, max_clients_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, max_classes_),
@@ -666,12 +587,8 @@ void protobuf_AssignDesc_netmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, game_dir_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, map_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, map_group_name_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, sky_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, host_name_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, public_ip_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, ugc_map_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, allow_loose_file_loads_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerInfo, allow_user_workshop_content_),
   };
   CSVCMsg_ServerInfo_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -684,7 +601,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_ServerInfo));
-  CSVCMsg_ClassInfo_descriptor_ = file->message_type(25);
+  CSVCMsg_ClassInfo_descriptor_ = file->message_type(21);
   static const int CSVCMsg_ClassInfo_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ClassInfo, create_on_client_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ClassInfo, classes_),
@@ -717,7 +634,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_ClassInfo_class_t));
-  CSVCMsg_SendTable_descriptor_ = file->message_type(26);
+  CSVCMsg_SendTable_descriptor_ = file->message_type(22);
   static const int CSVCMsg_SendTable_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_SendTable, is_end_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_SendTable, net_table_name_),
@@ -758,7 +675,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_SendTable_sendprop_t));
-  CSVCMsg_Print_descriptor_ = file->message_type(27);
+  CSVCMsg_Print_descriptor_ = file->message_type(23);
   static const int CSVCMsg_Print_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_Print, text_),
   };
@@ -773,7 +690,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_Print));
-  CSVCMsg_SetPause_descriptor_ = file->message_type(28);
+  CSVCMsg_SetPause_descriptor_ = file->message_type(24);
   static const int CSVCMsg_SetPause_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_SetPause, paused_),
   };
@@ -788,7 +705,23 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_SetPause));
-  CSVCMsg_SetView_descriptor_ = file->message_type(29);
+  CSVCMsg_SetPauseTimed_descriptor_ = file->message_type(25);
+  static const int CSVCMsg_SetPauseTimed_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_SetPauseTimed, paused_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_SetPauseTimed, expire_time_),
+  };
+  CSVCMsg_SetPauseTimed_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CSVCMsg_SetPauseTimed_descriptor_,
+      CSVCMsg_SetPauseTimed::default_instance_,
+      CSVCMsg_SetPauseTimed_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_SetPauseTimed, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_SetPauseTimed, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CSVCMsg_SetPauseTimed));
+  CSVCMsg_SetView_descriptor_ = file->message_type(26);
   static const int CSVCMsg_SetView_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_SetView, entity_index_),
   };
@@ -803,7 +736,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_SetView));
-  CSVCMsg_CreateStringTable_descriptor_ = file->message_type(30);
+  CSVCMsg_CreateStringTable_descriptor_ = file->message_type(27);
   static const int CSVCMsg_CreateStringTable_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_CreateStringTable, name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_CreateStringTable, max_entries_),
@@ -825,7 +758,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_CreateStringTable));
-  CSVCMsg_UpdateStringTable_descriptor_ = file->message_type(31);
+  CSVCMsg_UpdateStringTable_descriptor_ = file->message_type(28);
   static const int CSVCMsg_UpdateStringTable_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_UpdateStringTable, table_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_UpdateStringTable, num_changed_entries_),
@@ -842,7 +775,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_UpdateStringTable));
-  CSVCMsg_VoiceInit_descriptor_ = file->message_type(32);
+  CSVCMsg_VoiceInit_descriptor_ = file->message_type(29);
   static const int CSVCMsg_VoiceInit_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_VoiceInit, quality_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_VoiceInit, codec_),
@@ -859,7 +792,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_VoiceInit));
-  CSVCMsg_VoiceData_descriptor_ = file->message_type(33);
+  CSVCMsg_VoiceData_descriptor_ = file->message_type(30);
   static const int CSVCMsg_VoiceData_offsets_[10] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_VoiceData, client_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_VoiceData, proximity_),
@@ -883,7 +816,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_VoiceData));
-  CSVCMsg_FixAngle_descriptor_ = file->message_type(34);
+  CSVCMsg_FixAngle_descriptor_ = file->message_type(31);
   static const int CSVCMsg_FixAngle_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_FixAngle, relative_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_FixAngle, angle_),
@@ -899,7 +832,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_FixAngle));
-  CSVCMsg_CrosshairAngle_descriptor_ = file->message_type(35);
+  CSVCMsg_CrosshairAngle_descriptor_ = file->message_type(32);
   static const int CSVCMsg_CrosshairAngle_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_CrosshairAngle, angle_),
   };
@@ -914,7 +847,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_CrosshairAngle));
-  CSVCMsg_Prefetch_descriptor_ = file->message_type(36);
+  CSVCMsg_Prefetch_descriptor_ = file->message_type(33);
   static const int CSVCMsg_Prefetch_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_Prefetch, sound_index_),
   };
@@ -929,7 +862,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_Prefetch));
-  CSVCMsg_BSPDecal_descriptor_ = file->message_type(37);
+  CSVCMsg_BSPDecal_descriptor_ = file->message_type(34);
   static const int CSVCMsg_BSPDecal_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_BSPDecal, pos_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_BSPDecal, decal_texture_index_),
@@ -948,7 +881,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_BSPDecal));
-  CSVCMsg_SplitScreen_descriptor_ = file->message_type(38);
+  CSVCMsg_SplitScreen_descriptor_ = file->message_type(35);
   static const int CSVCMsg_SplitScreen_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_SplitScreen, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_SplitScreen, slot_),
@@ -965,7 +898,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_SplitScreen));
-  CSVCMsg_GetCvarValue_descriptor_ = file->message_type(39);
+  CSVCMsg_GetCvarValue_descriptor_ = file->message_type(36);
   static const int CSVCMsg_GetCvarValue_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GetCvarValue, cookie_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GetCvarValue, cvar_name_),
@@ -981,7 +914,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_GetCvarValue));
-  CSVCMsg_Menu_descriptor_ = file->message_type(40);
+  CSVCMsg_Menu_descriptor_ = file->message_type(37);
   static const int CSVCMsg_Menu_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_Menu, dialog_type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_Menu, menu_key_values_),
@@ -997,7 +930,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_Menu));
-  CSVCMsg_UserMessage_descriptor_ = file->message_type(41);
+  CSVCMsg_UserMessage_descriptor_ = file->message_type(38);
   static const int CSVCMsg_UserMessage_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_UserMessage, msg_type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_UserMessage, msg_data_),
@@ -1014,7 +947,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_UserMessage));
-  CSVCMsg_PaintmapData_descriptor_ = file->message_type(42);
+  CSVCMsg_PaintmapData_descriptor_ = file->message_type(39);
   static const int CSVCMsg_PaintmapData_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_PaintmapData, paintmap_),
   };
@@ -1029,7 +962,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_PaintmapData));
-  CSVCMsg_GameEvent_descriptor_ = file->message_type(43);
+  CSVCMsg_GameEvent_descriptor_ = file->message_type(40);
   static const int CSVCMsg_GameEvent_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GameEvent, event_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GameEvent, eventid_),
@@ -1070,7 +1003,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_GameEvent_key_t));
-  CSVCMsg_GameEventList_descriptor_ = file->message_type(44);
+  CSVCMsg_GameEventList_descriptor_ = file->message_type(41);
   static const int CSVCMsg_GameEventList_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GameEventList, descriptors_),
   };
@@ -1118,7 +1051,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_GameEventList_descriptor_t));
-  CSVCMsg_TempEntities_descriptor_ = file->message_type(45);
+  CSVCMsg_TempEntities_descriptor_ = file->message_type(42);
   static const int CSVCMsg_TempEntities_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_TempEntities, reliable_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_TempEntities, num_entries_),
@@ -1135,7 +1068,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_TempEntities));
-  CSVCMsg_PacketEntities_descriptor_ = file->message_type(46);
+  CSVCMsg_PacketEntities_descriptor_ = file->message_type(43);
   static const int CSVCMsg_PacketEntities_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_PacketEntities, max_entries_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_PacketEntities, updated_entries_),
@@ -1156,7 +1089,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_PacketEntities));
-  CSVCMsg_Sounds_descriptor_ = file->message_type(47);
+  CSVCMsg_Sounds_descriptor_ = file->message_type(44);
   static const int CSVCMsg_Sounds_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_Sounds, reliable_sound_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_Sounds, sounds_),
@@ -1203,7 +1136,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_Sounds_sounddata_t));
-  CSVCMsg_EntityMsg_descriptor_ = file->message_type(48);
+  CSVCMsg_EntityMsg_descriptor_ = file->message_type(45);
   static const int CSVCMsg_EntityMsg_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_EntityMsg, ent_index_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_EntityMsg, class_id_),
@@ -1220,7 +1153,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_EntityMsg));
-  CSVCMsg_CmdKeyValues_descriptor_ = file->message_type(49);
+  CSVCMsg_CmdKeyValues_descriptor_ = file->message_type(46);
   static const int CSVCMsg_CmdKeyValues_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_CmdKeyValues, keyvalues_),
   };
@@ -1235,7 +1168,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_CmdKeyValues));
-  CSVCMsg_EncryptedData_descriptor_ = file->message_type(50);
+  CSVCMsg_EncryptedData_descriptor_ = file->message_type(47);
   static const int CSVCMsg_EncryptedData_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_EncryptedData, encrypted_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_EncryptedData, key_type_),
@@ -1251,7 +1184,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_EncryptedData));
-  CSVCMsg_HltvReplay_descriptor_ = file->message_type(51);
+  CSVCMsg_HltvReplay_descriptor_ = file->message_type(48);
   static const int CSVCMsg_HltvReplay_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_HltvReplay, delay_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_HltvReplay, primary_target_),
@@ -1273,7 +1206,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_HltvReplay));
-  CCLCMsg_HltvReplay_descriptor_ = file->message_type(52);
+  CCLCMsg_HltvReplay_descriptor_ = file->message_type(49);
   static const int CCLCMsg_HltvReplay_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_HltvReplay, request_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_HltvReplay, slowdown_length_),
@@ -1292,7 +1225,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CCLCMsg_HltvReplay));
-  CSVCMsg_Broadcast_Command_descriptor_ = file->message_type(53);
+  CSVCMsg_Broadcast_Command_descriptor_ = file->message_type(50);
   static const int CSVCMsg_Broadcast_Command_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_Broadcast_Command, cmd_),
   };
@@ -1307,7 +1240,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_Broadcast_Command));
-  CCLCMsg_HltvFixupOperatorTick_descriptor_ = file->message_type(54);
+  CCLCMsg_HltvFixupOperatorTick_descriptor_ = file->message_type(51);
   static const int CCLCMsg_HltvFixupOperatorTick_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_HltvFixupOperatorTick, tick_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCLCMsg_HltvFixupOperatorTick, props_data_),
@@ -1329,7 +1262,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CCLCMsg_HltvFixupOperatorTick));
-  CSVCMsg_HltvFixupOperatorStatus_descriptor_ = file->message_type(55);
+  CSVCMsg_HltvFixupOperatorStatus_descriptor_ = file->message_type(52);
   static const int CSVCMsg_HltvFixupOperatorStatus_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_HltvFixupOperatorStatus, mode_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_HltvFixupOperatorStatus, override_operator_name_),
@@ -1363,14 +1296,6 @@ inline void protobuf_AssignDescriptorsOnce() {
 
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    CMsgVector_descriptor_, &CMsgVector::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    CMsgVector2D_descriptor_, &CMsgVector2D::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    CMsgQAngle_descriptor_, &CMsgQAngle::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    CMsgRGBA_descriptor_, &CMsgRGBA::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CNETMsg_Tick_descriptor_, &CNETMsg_Tick::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -1427,6 +1352,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     CSVCMsg_Print_descriptor_, &CSVCMsg_Print::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CSVCMsg_SetPause_descriptor_, &CSVCMsg_SetPause::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CSVCMsg_SetPauseTimed_descriptor_, &CSVCMsg_SetPauseTimed::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CSVCMsg_SetView_descriptor_, &CSVCMsg_SetView::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -1494,14 +1421,6 @@ void protobuf_RegisterTypes(const ::std::string&) {
 }  // namespace
 
 void protobuf_ShutdownFile_netmessages_2eproto() {
-  delete CMsgVector::default_instance_;
-  delete CMsgVector_reflection_;
-  delete CMsgVector2D::default_instance_;
-  delete CMsgVector2D_reflection_;
-  delete CMsgQAngle::default_instance_;
-  delete CMsgQAngle_reflection_;
-  delete CMsgRGBA::default_instance_;
-  delete CMsgRGBA_reflection_;
   delete CNETMsg_Tick::default_instance_;
   delete CNETMsg_Tick_reflection_;
   delete CNETMsg_StringCmd::default_instance_;
@@ -1558,6 +1477,8 @@ void protobuf_ShutdownFile_netmessages_2eproto() {
   delete CSVCMsg_Print_reflection_;
   delete CSVCMsg_SetPause::default_instance_;
   delete CSVCMsg_SetPause_reflection_;
+  delete CSVCMsg_SetPauseTimed::default_instance_;
+  delete CSVCMsg_SetPauseTimed_reflection_;
   delete CSVCMsg_SetView::default_instance_;
   delete CSVCMsg_SetView_reflection_;
   delete CSVCMsg_CreateStringTable::default_instance_;
@@ -1628,219 +1549,208 @@ void protobuf_AddDesc_netmessages_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto();
+  ::protobuf_AddDesc_networkbasetypes_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\021netmessages.proto\032 google/protobuf/des"
-    "criptor.proto\"-\n\nCMsgVector\022\t\n\001x\030\001 \001(\002\022\t"
-    "\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\"$\n\014CMsgVector2D\022\t\n\001"
-    "x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"-\n\nCMsgQAngle\022\t\n\001x\030\001 "
-    "\001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\"6\n\010CMsgRGBA\022\t\n"
-    "\001r\030\001 \001(\005\022\t\n\001g\030\002 \001(\005\022\t\n\001b\030\003 \001(\005\022\t\n\001a\030\004 \001("
-    "\005\"\254\001\n\014CNETMsg_Tick\022\014\n\004tick\030\001 \001(\r\022\034\n\024host"
-    "_computationtime\030\004 \001(\r\022*\n\"host_computati"
-    "ontime_std_deviation\030\005 \001(\r\022)\n!host_frame"
-    "starttime_std_deviation\030\006 \001(\r\022\031\n\021hltv_re"
-    "play_flags\030\007 \001(\r\"$\n\021CNETMsg_StringCmd\022\017\n"
-    "\007command\030\001 \001(\t\"\212\001\n\023CNETMsg_SignonState\022\024"
-    "\n\014signon_state\030\001 \001(\r\022\023\n\013spawn_count\030\002 \001("
-    "\r\022\032\n\022num_server_players\030\003 \001(\r\022\032\n\022players"
-    "_networkids\030\004 \003(\t\022\020\n\010map_name\030\005 \001(\t\"k\n\nC"
-    "Msg_CVars\022\037\n\005cvars\030\001 \003(\0132\020.CMsg_CVars.CV"
-    "ar\032<\n\004CVar\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022"
-    "\027\n\017dictionary_name\030\003 \001(\r\"1\n\021CNETMsg_SetC"
-    "onVar\022\034\n\007convars\030\001 \001(\0132\013.CMsg_CVars\"\r\n\013C"
-    "NETMsg_NOP\"\"\n\022CNETMsg_Disconnect\022\014\n\004text"
-    "\030\001 \001(\t\"a\n\014CNETMsg_File\022\023\n\013transfer_id\030\001 "
-    "\001(\005\022\021\n\tfile_name\030\002 \001(\t\022\033\n\023is_replay_demo"
-    "_file\030\003 \001(\010\022\014\n\004deny\030\004 \001(\010\"\'\n\027CNETMsg_Spl"
-    "itScreenUser\022\014\n\004slot\030\001 \001(\005\":\n\030CNETMsg_Pl"
-    "ayerAvatarData\022\021\n\taccountid\030\001 \001(\r\022\013\n\003rgb"
-    "\030\002 \001(\014\"\246\001\n\022CCLCMsg_ClientInfo\022\026\n\016send_ta"
-    "ble_crc\030\001 \001(\007\022\024\n\014server_count\030\002 \001(\r\022\017\n\007i"
-    "s_hltv\030\003 \001(\010\022\021\n\tis_replay\030\004 \001(\010\022\022\n\nfrien"
-    "ds_id\030\005 \001(\r\022\024\n\014friends_name\030\006 \001(\t\022\024\n\014cus"
-    "tom_files\030\007 \003(\007\"S\n\014CCLCMsg_Move\022\033\n\023num_b"
-    "ackup_commands\030\001 \001(\r\022\030\n\020num_new_commands"
-    "\030\002 \001(\r\022\014\n\004data\030\003 \001(\014\"\300\001\n\021CCLCMsg_VoiceDa"
-    "ta\022\014\n\004data\030\001 \001(\014\022\014\n\004xuid\030\002 \001(\006\022;\n\006format"
-    "\030\003 \001(\0162\022.VoiceDataFormat_t:\027VOICEDATA_FO"
-    "RMAT_ENGINE\022\026\n\016sequence_bytes\030\004 \001(\005\022\026\n\016s"
-    "ection_number\030\005 \001(\r\022\"\n\032uncompressed_samp"
-    "le_offset\030\006 \001(\r\"A\n\023CCLCMsg_BaselineAck\022\025"
-    "\n\rbaseline_tick\030\001 \001(\005\022\023\n\013baseline_nr\030\002 \001"
-    "(\005\"*\n\024CCLCMsg_ListenEvents\022\022\n\nevent_mask"
-    "\030\001 \003(\007\"\\\n\030CCLCMsg_RespondCvarValue\022\016\n\006co"
-    "okie\030\001 \001(\005\022\023\n\013status_code\030\002 \001(\005\022\014\n\004name\030"
-    "\003 \001(\t\022\r\n\005value\030\004 \001(\t\"\353\001\n\024CCLCMsg_FileCRC"
-    "Check\022\021\n\tcode_path\030\001 \001(\005\022\014\n\004path\030\002 \001(\t\022\025"
-    "\n\rcode_filename\030\003 \001(\005\022\020\n\010filename\030\004 \001(\t\022"
-    "\025\n\rfile_fraction\030\005 \001(\005\022\013\n\003md5\030\006 \001(\014\022\013\n\003c"
-    "rc\030\007 \001(\r\022\026\n\016file_hash_type\030\010 \001(\005\022\020\n\010file"
-    "_len\030\t \001(\005\022\024\n\014pack_file_id\030\n \001(\005\022\030\n\020pack"
-    "_file_number\030\013 \001(\005\"+\n\027CCLCMsg_LoadingPro"
-    "gress\022\020\n\010progress\030\001 \001(\005\":\n\032CCLCMsg_Split"
-    "PlayerConnect\022\034\n\007convars\030\001 \001(\0132\013.CMsg_CV"
-    "ars\")\n\024CCLCMsg_CmdKeyValues\022\021\n\tkeyvalues"
-    "\030\001 \001(\014\"\257\004\n\022CSVCMsg_ServerInfo\022\020\n\010protoco"
-    "l\030\001 \001(\005\022\024\n\014server_count\030\002 \001(\005\022\024\n\014is_dedi"
-    "cated\030\003 \001(\010\022 \n\030is_official_valve_server\030"
-    "\004 \001(\010\022\017\n\007is_hltv\030\005 \001(\010\022\021\n\tis_replay\030\006 \001("
-    "\010\022%\n\035is_redirecting_to_proxy_relay\030\025 \001(\010"
-    "\022\014\n\004c_os\030\007 \001(\005\022\017\n\007map_crc\030\010 \001(\007\022\022\n\nclien"
-    "t_crc\030\t \001(\007\022\030\n\020string_table_crc\030\n \001(\007\022\023\n"
-    "\013max_clients\030\013 \001(\005\022\023\n\013max_classes\030\014 \001(\005\022"
-    "\023\n\013player_slot\030\r \001(\005\022\025\n\rtick_interval\030\016 "
-    "\001(\002\022\020\n\010game_dir\030\017 \001(\t\022\020\n\010map_name\030\020 \001(\t\022"
-    "\026\n\016map_group_name\030\021 \001(\t\022\020\n\010sky_name\030\022 \001("
-    "\t\022\021\n\thost_name\030\023 \001(\t\022\021\n\tpublic_ip\030\024 \001(\r\022"
-    "\022\n\nugc_map_id\030\026 \001(\004\022\036\n\026allow_loose_file_"
-    "loads\030\027 \001(\010\022#\n\033allow_user_workshop_conte"
-    "nt\030\030 \001(\010\"\244\001\n\021CSVCMsg_ClassInfo\022\030\n\020create"
-    "_on_client\030\001 \001(\010\022+\n\007classes\030\002 \003(\0132\032.CSVC"
-    "Msg_ClassInfo.class_t\032H\n\007class_t\022\020\n\010clas"
-    "s_id\030\001 \001(\005\022\027\n\017data_table_name\030\002 \001(\t\022\022\n\nc"
-    "lass_name\030\003 \001(\t\"\260\002\n\021CSVCMsg_SendTable\022\016\n"
-    "\006is_end\030\001 \001(\010\022\026\n\016net_table_name\030\002 \001(\t\022\025\n"
-    "\rneeds_decoder\030\003 \001(\010\022,\n\005props\030\004 \003(\0132\035.CS"
-    "VCMsg_SendTable.sendprop_t\032\255\001\n\nsendprop_"
-    "t\022\014\n\004type\030\001 \001(\005\022\020\n\010var_name\030\002 \001(\t\022\r\n\005fla"
-    "gs\030\003 \001(\005\022\020\n\010priority\030\004 \001(\005\022\017\n\007dt_name\030\005 "
-    "\001(\t\022\024\n\014num_elements\030\006 \001(\005\022\021\n\tlow_value\030\007"
-    " \001(\002\022\022\n\nhigh_value\030\010 \001(\002\022\020\n\010num_bits\030\t \001"
-    "(\005\"\035\n\rCSVCMsg_Print\022\014\n\004text\030\001 \001(\t\"\"\n\020CSV"
-    "CMsg_SetPause\022\016\n\006paused\030\001 \001(\010\"\'\n\017CSVCMsg"
-    "_SetView\022\024\n\014entity_index\030\001 \001(\005\"\312\001\n\031CSVCM"
-    "sg_CreateStringTable\022\014\n\004name\030\001 \001(\t\022\023\n\013ma"
-    "x_entries\030\002 \001(\005\022\023\n\013num_entries\030\003 \001(\005\022\034\n\024"
-    "user_data_fixed_size\030\004 \001(\010\022\026\n\016user_data_"
-    "size\030\005 \001(\005\022\033\n\023user_data_size_bits\030\006 \001(\005\022"
-    "\r\n\005flags\030\007 \001(\005\022\023\n\013string_data\030\010 \001(\014\"_\n\031C"
-    "SVCMsg_UpdateStringTable\022\020\n\010table_id\030\001 \001"
-    "(\005\022\033\n\023num_changed_entries\030\002 \001(\005\022\023\n\013strin"
-    "g_data\030\003 \001(\014\"G\n\021CSVCMsg_VoiceInit\022\017\n\007qua"
-    "lity\030\001 \001(\005\022\r\n\005codec\030\002 \001(\t\022\022\n\007version\030\003 \001"
-    "(\005:\0010\"\217\002\n\021CSVCMsg_VoiceData\022\016\n\006client\030\001 "
-    "\001(\005\022\021\n\tproximity\030\002 \001(\010\022\014\n\004xuid\030\003 \001(\006\022\024\n\014"
-    "audible_mask\030\004 \001(\005\022\022\n\nvoice_data\030\005 \001(\014\022\016"
-    "\n\006caster\030\006 \001(\010\022;\n\006format\030\007 \001(\0162\022.VoiceDa"
-    "taFormat_t:\027VOICEDATA_FORMAT_ENGINE\022\026\n\016s"
-    "equence_bytes\030\010 \001(\005\022\026\n\016section_number\030\t "
-    "\001(\r\022\"\n\032uncompressed_sample_offset\030\n \001(\r\""
-    "@\n\020CSVCMsg_FixAngle\022\020\n\010relative\030\001 \001(\010\022\032\n"
-    "\005angle\030\002 \001(\0132\013.CMsgQAngle\"4\n\026CSVCMsg_Cro"
-    "sshairAngle\022\032\n\005angle\030\001 \001(\0132\013.CMsgQAngle\""
-    "\'\n\020CSVCMsg_Prefetch\022\023\n\013sound_index\030\001 \001(\005"
-    "\"\212\001\n\020CSVCMsg_BSPDecal\022\030\n\003pos\030\001 \001(\0132\013.CMs"
-    "gVector\022\033\n\023decal_texture_index\030\002 \001(\005\022\024\n\014"
-    "entity_index\030\003 \001(\005\022\023\n\013model_index\030\004 \001(\005\022"
-    "\024\n\014low_priority\030\005 \001(\010\"z\n\023CSVCMsg_SplitSc"
-    "reen\022\?\n\004type\030\001 \001(\0162\030.ESplitScreenMessage"
-    "Type:\027MSG_SPLITSCREEN_ADDUSER\022\014\n\004slot\030\002 "
-    "\001(\005\022\024\n\014player_index\030\003 \001(\005\"9\n\024CSVCMsg_Get"
-    "CvarValue\022\016\n\006cookie\030\001 \001(\005\022\021\n\tcvar_name\030\002"
-    " \001(\t\"<\n\014CSVCMsg_Menu\022\023\n\013dialog_type\030\001 \001("
-    "\005\022\027\n\017menu_key_values\030\002 \001(\014\"N\n\023CSVCMsg_Us"
-    "erMessage\022\020\n\010msg_type\030\001 \001(\005\022\020\n\010msg_data\030"
-    "\002 \001(\014\022\023\n\013passthrough\030\003 \001(\005\"(\n\024CSVCMsg_Pa"
-    "intmapData\022\020\n\010paintmap\030\001 \001(\014\"\246\002\n\021CSVCMsg"
-    "_GameEvent\022\022\n\nevent_name\030\001 \001(\t\022\017\n\007eventi"
-    "d\030\002 \001(\005\022&\n\004keys\030\003 \003(\0132\030.CSVCMsg_GameEven"
-    "t.key_t\022\023\n\013passthrough\030\004 \001(\005\032\256\001\n\005key_t\022\014"
-    "\n\004type\030\001 \001(\005\022\022\n\nval_string\030\002 \001(\t\022\021\n\tval_"
-    "float\030\003 \001(\002\022\020\n\010val_long\030\004 \001(\005\022\021\n\tval_sho"
-    "rt\030\005 \001(\005\022\020\n\010val_byte\030\006 \001(\005\022\020\n\010val_bool\030\007"
-    " \001(\010\022\022\n\nval_uint64\030\010 \001(\004\022\023\n\013val_wstring\030"
-    "\t \001(\014\"\321\001\n\025CSVCMsg_GameEventList\0228\n\013descr"
-    "iptors\030\001 \003(\0132#.CSVCMsg_GameEventList.des"
-    "criptor_t\032#\n\005key_t\022\014\n\004type\030\001 \001(\005\022\014\n\004name"
-    "\030\002 \001(\t\032Y\n\014descriptor_t\022\017\n\007eventid\030\001 \001(\005\022"
-    "\014\n\004name\030\002 \001(\t\022*\n\004keys\030\003 \003(\0132\034.CSVCMsg_Ga"
-    "meEventList.key_t\"R\n\024CSVCMsg_TempEntitie"
-    "s\022\020\n\010reliable\030\001 \001(\010\022\023\n\013num_entries\030\002 \001(\005"
-    "\022\023\n\013entity_data\030\003 \001(\014\"\254\001\n\026CSVCMsg_Packet"
-    "Entities\022\023\n\013max_entries\030\001 \001(\005\022\027\n\017updated"
-    "_entries\030\002 \001(\005\022\020\n\010is_delta\030\003 \001(\010\022\027\n\017upda"
-    "te_baseline\030\004 \001(\010\022\020\n\010baseline\030\005 \001(\005\022\022\n\nd"
-    "elta_from\030\006 \001(\005\022\023\n\013entity_data\030\007 \001(\014\"\266\003\n"
-    "\016CSVCMsg_Sounds\022\026\n\016reliable_sound\030\001 \001(\010\022"
-    "+\n\006sounds\030\002 \003(\0132\033.CSVCMsg_Sounds.soundda"
-    "ta_t\032\336\002\n\013sounddata_t\022\020\n\010origin_x\030\001 \001(\021\022\020"
-    "\n\010origin_y\030\002 \001(\021\022\020\n\010origin_z\030\003 \001(\021\022\016\n\006vo"
-    "lume\030\004 \001(\r\022\023\n\013delay_value\030\005 \001(\002\022\027\n\017seque"
-    "nce_number\030\006 \001(\005\022\024\n\014entity_index\030\007 \001(\005\022\017"
-    "\n\007channel\030\010 \001(\005\022\r\n\005pitch\030\t \001(\005\022\r\n\005flags\030"
-    "\n \001(\005\022\021\n\tsound_num\030\013 \001(\r\022\030\n\020sound_num_ha"
-    "ndle\030\014 \001(\007\022\026\n\016speaker_entity\030\r \001(\005\022\023\n\013ra"
-    "ndom_seed\030\016 \001(\005\022\023\n\013sound_level\030\017 \001(\005\022\023\n\013"
-    "is_sentence\030\020 \001(\010\022\022\n\nis_ambient\030\021 \001(\010\"J\n"
-    "\021CSVCMsg_EntityMsg\022\021\n\tent_index\030\001 \001(\005\022\020\n"
-    "\010class_id\030\002 \001(\005\022\020\n\010ent_data\030\003 \001(\014\")\n\024CSV"
-    "CMsg_CmdKeyValues\022\021\n\tkeyvalues\030\001 \001(\014\"<\n\025"
-    "CSVCMsg_EncryptedData\022\021\n\tencrypted\030\001 \001(\014"
-    "\022\020\n\010key_type\030\002 \001(\005\"\326\001\n\022CSVCMsg_HltvRepla"
-    "y\022\r\n\005delay\030\001 \001(\005\022\026\n\016primary_target\030\002 \001(\005"
-    "\022\026\n\016replay_stop_at\030\003 \001(\005\022\027\n\017replay_start"
-    "_at\030\004 \001(\005\022\035\n\025replay_slowdown_begin\030\005 \001(\005"
-    "\022\033\n\023replay_slowdown_end\030\006 \001(\005\022\034\n\024replay_"
-    "slowdown_rate\030\007 \001(\002\022\016\n\006reason\030\010 \001(\005\"\213\001\n\022"
-    "CCLCMsg_HltvReplay\022\017\n\007request\030\001 \001(\005\022\027\n\017s"
-    "lowdown_length\030\002 \001(\002\022\025\n\rslowdown_rate\030\003 "
-    "\001(\002\022 \n\030primary_target_ent_index\030\004 \001(\005\022\022\n"
-    "\nevent_time\030\005 \001(\002\"(\n\031CSVCMsg_Broadcast_C"
-    "ommand\022\013\n\003cmd\030\001 \001(\t\"\357\001\n\035CCLCMsg_HltvFixu"
-    "pOperatorTick\022\014\n\004tick\030\001 \001(\005\022\022\n\nprops_dat"
-    "a\030\002 \001(\014\022\033\n\006origin\030\003 \001(\0132\013.CMsgVector\022\037\n\n"
-    "eye_angles\030\004 \001(\0132\013.CMsgQAngle\022\025\n\robserve"
-    "r_mode\030\005 \001(\005\022\034\n\024cameraman_scoreboard\030\006 \001"
-    "(\010\022\027\n\017observer_target\030\007 \001(\005\022 \n\013view_offs"
-    "et\030\010 \001(\0132\013.CMsgVector\"O\n\037CSVCMsg_HltvFix"
-    "upOperatorStatus\022\014\n\004mode\030\001 \001(\r\022\036\n\026overri"
-    "de_operator_name\030\002 \001(\t*\271\001\n\014NET_Messages\022"
-    "\013\n\007net_NOP\020\000\022\022\n\016net_Disconnect\020\001\022\014\n\010net_"
-    "File\020\002\022\027\n\023net_SplitScreenUser\020\003\022\014\n\010net_T"
-    "ick\020\004\022\021\n\rnet_StringCmd\020\005\022\021\n\rnet_SetConVa"
-    "r\020\006\022\023\n\017net_SignonState\020\007\022\030\n\024net_PlayerAv"
-    "atarData\020d*\326\002\n\014CLC_Messages\022\022\n\016clc_Clien"
-    "tInfo\020\010\022\014\n\010clc_Move\020\t\022\021\n\rclc_VoiceData\020\n"
-    "\022\023\n\017clc_BaselineAck\020\013\022\024\n\020clc_ListenEvent"
-    "s\020\014\022\030\n\024clc_RespondCvarValue\020\r\022\024\n\020clc_Fil"
-    "eCRCCheck\020\016\022\027\n\023clc_LoadingProgress\020\017\022\032\n\026"
-    "clc_SplitPlayerConnect\020\020\022\025\n\021clc_ClientMe"
-    "ssage\020\021\022\024\n\020clc_CmdKeyValues\020\022\022\022\n\016clc_Hlt"
-    "vReplay\020\024\022\035\n\031clc_HltvFixupOperatorTick\020\025"
-    "\022!\n\035clc_HltvFixupOperatorReceiver\020\026*L\n\021V"
-    "oiceDataFormat_t\022\032\n\026VOICEDATA_FORMAT_STE"
-    "AM\020\000\022\033\n\027VOICEDATA_FORMAT_ENGINE\020\001*y\n\027ESp"
-    "litScreenMessageType\022\033\n\027MSG_SPLITSCREEN_"
-    "ADDUSER\020\000\022\036\n\032MSG_SPLITSCREEN_REMOVEUSER\020"
-    "\001\022\035\n\031MSG_SPLITSCREEN_TYPE_BITS\020\001\032\002\020\001*\204\005\n"
-    "\014SVC_Messages\022\022\n\016svc_ServerInfo\020\010\022\021\n\rsvc"
-    "_SendTable\020\t\022\021\n\rsvc_ClassInfo\020\n\022\020\n\014svc_S"
-    "etPause\020\013\022\031\n\025svc_CreateStringTable\020\014\022\031\n\025"
-    "svc_UpdateStringTable\020\r\022\021\n\rsvc_VoiceInit"
-    "\020\016\022\021\n\rsvc_VoiceData\020\017\022\r\n\tsvc_Print\020\020\022\016\n\n"
-    "svc_Sounds\020\021\022\017\n\013svc_SetView\020\022\022\020\n\014svc_Fix"
-    "Angle\020\023\022\026\n\022svc_CrosshairAngle\020\024\022\020\n\014svc_B"
-    "SPDecal\020\025\022\023\n\017svc_SplitScreen\020\026\022\023\n\017svc_Us"
-    "erMessage\020\027\022\025\n\021svc_EntityMessage\020\030\022\021\n\rsv"
-    "c_GameEvent\020\031\022\026\n\022svc_PacketEntities\020\032\022\024\n"
-    "\020svc_TempEntities\020\033\022\020\n\014svc_Prefetch\020\034\022\014\n"
-    "\010svc_Menu\020\035\022\025\n\021svc_GameEventList\020\036\022\024\n\020sv"
-    "c_GetCvarValue\020\037\022\024\n\020svc_PaintmapData\020!\022\024"
-    "\n\020svc_CmdKeyValues\020\"\022\025\n\021svc_EncryptedDat"
-    "a\020#\022\022\n\016svc_HltvReplay\020$\022\031\n\025svc_Broadcast"
-    "_Command\020&\022\037\n\033svc_HltvFixupOperatorStatu"
-    "s\020\'*\241\001\n\021ReplayEventType_t\022\027\n\023REPLAY_EVEN"
-    "T_CANCEL\020\000\022\026\n\022REPLAY_EVENT_DEATH\020\001\022\030\n\024RE"
-    "PLAY_EVENT_GENERIC\020\002\022\'\n#REPLAY_EVENT_STU"
-    "CK_NEED_FULL_UPDATE\020\003\022\030\n\024REPLAY_EVENT_VI"
-    "CTORY\020\004B\003\200\001\000", 8172);
+    "\n\021netmessages.proto\032\026networkbasetypes.pr"
+    "oto\"\254\001\n\014CNETMsg_Tick\022\014\n\004tick\030\001 \001(\r\022\034\n\024ho"
+    "st_computationtime\030\004 \001(\r\022*\n\"host_computa"
+    "tiontime_std_deviation\030\005 \001(\r\022)\n!host_fra"
+    "mestarttime_std_deviation\030\006 \001(\r\022\031\n\021hltv_"
+    "replay_flags\030\007 \001(\r\"$\n\021CNETMsg_StringCmd\022"
+    "\017\n\007command\030\001 \001(\t\"\212\001\n\023CNETMsg_SignonState"
+    "\022\024\n\014signon_state\030\001 \001(\r\022\023\n\013spawn_count\030\002 "
+    "\001(\r\022\032\n\022num_server_players\030\003 \001(\r\022\032\n\022playe"
+    "rs_networkids\030\004 \003(\t\022\020\n\010map_name\030\005 \001(\t\"k\n"
+    "\nCMsg_CVars\022\037\n\005cvars\030\001 \003(\0132\020.CMsg_CVars."
+    "CVar\032<\n\004CVar\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001("
+    "\t\022\027\n\017dictionary_name\030\003 \001(\r\"1\n\021CNETMsg_Se"
+    "tConVar\022\034\n\007convars\030\001 \001(\0132\013.CMsg_CVars\"\r\n"
+    "\013CNETMsg_NOP\"\"\n\022CNETMsg_Disconnect\022\014\n\004te"
+    "xt\030\001 \001(\t\"a\n\014CNETMsg_File\022\023\n\013transfer_id\030"
+    "\001 \001(\005\022\021\n\tfile_name\030\002 \001(\t\022\033\n\023is_replay_de"
+    "mo_file\030\003 \001(\010\022\014\n\004deny\030\004 \001(\010\"\'\n\027CNETMsg_S"
+    "plitScreenUser\022\014\n\004slot\030\001 \001(\005\":\n\030CNETMsg_"
+    "PlayerAvatarData\022\021\n\taccountid\030\001 \001(\r\022\013\n\003r"
+    "gb\030\002 \001(\014\"\223\001\n\022CCLCMsg_ClientInfo\022\026\n\016send_"
+    "table_crc\030\001 \001(\007\022\024\n\014server_count\030\002 \001(\r\022\017\n"
+    "\007is_hltv\030\003 \001(\010\022\022\n\nfriends_id\030\004 \001(\r\022\024\n\014fr"
+    "iends_name\030\005 \001(\t\022\024\n\014custom_files\030\006 \003(\007\"S"
+    "\n\014CCLCMsg_Move\022\033\n\023num_backup_commands\030\001 "
+    "\001(\r\022\030\n\020num_new_commands\030\002 \001(\r\022\014\n\004data\030\003 "
+    "\001(\014\"\300\001\n\021CCLCMsg_VoiceData\022\014\n\004data\030\001 \001(\014\022"
+    "\014\n\004xuid\030\002 \001(\006\022;\n\006format\030\003 \001(\0162\022.VoiceDat"
+    "aFormat_t:\027VOICEDATA_FORMAT_ENGINE\022\026\n\016se"
+    "quence_bytes\030\004 \001(\005\022\026\n\016section_number\030\005 \001"
+    "(\r\022\"\n\032uncompressed_sample_offset\030\006 \001(\r\"A"
+    "\n\023CCLCMsg_BaselineAck\022\025\n\rbaseline_tick\030\001"
+    " \001(\005\022\023\n\013baseline_nr\030\002 \001(\005\"*\n\024CCLCMsg_Lis"
+    "tenEvents\022\022\n\nevent_mask\030\001 \003(\007\"\\\n\030CCLCMsg"
+    "_RespondCvarValue\022\016\n\006cookie\030\001 \001(\005\022\023\n\013sta"
+    "tus_code\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\r\n\005value\030\004 "
+    "\001(\t\"\353\001\n\024CCLCMsg_FileCRCCheck\022\021\n\tcode_pat"
+    "h\030\001 \001(\005\022\014\n\004path\030\002 \001(\t\022\025\n\rcode_filename\030\003"
+    " \001(\005\022\020\n\010filename\030\004 \001(\t\022\025\n\rfile_fraction\030"
+    "\005 \001(\005\022\013\n\003md5\030\006 \001(\014\022\013\n\003crc\030\007 \001(\r\022\026\n\016file_"
+    "hash_type\030\010 \001(\005\022\020\n\010file_len\030\t \001(\005\022\024\n\014pac"
+    "k_file_id\030\n \001(\005\022\030\n\020pack_file_number\030\013 \001("
+    "\005\"+\n\027CCLCMsg_LoadingProgress\022\020\n\010progress"
+    "\030\001 \001(\005\":\n\032CCLCMsg_SplitPlayerConnect\022\034\n\007"
+    "convars\030\001 \001(\0132\013.CMsg_CVars\")\n\024CCLCMsg_Cm"
+    "dKeyValues\022\021\n\tkeyvalues\030\001 \001(\014\"\254\003\n\022CSVCMs"
+    "g_ServerInfo\022\020\n\010protocol\030\001 \001(\005\022\024\n\014server"
+    "_count\030\002 \001(\005\022\024\n\014is_dedicated\030\003 \001(\010\022\023\n\013is"
+    "_official\030\004 \001(\010\022\024\n\014is_protected\030\005 \001(\010\022\017\n"
+    "\007is_hltv\030\006 \001(\010\022%\n\035is_redirecting_to_prox"
+    "y_relay\030\007 \001(\010\022\014\n\004c_os\030\010 \001(\005\022\024\n\014worldmap_"
+    "crc\030\t \001(\007\022\030\n\020string_table_crc\030\n \001(\007\022\023\n\013m"
+    "ax_clients\030\013 \001(\005\022\023\n\013max_classes\030\014 \001(\005\022\023\n"
+    "\013player_slot\030\r \001(\005\022\025\n\rtick_interval\030\016 \001("
+    "\002\022\020\n\010game_dir\030\017 \001(\t\022\020\n\010map_name\030\020 \001(\t\022\026\n"
+    "\016map_group_name\030\021 \001(\t\022\021\n\thost_name\030\022 \001(\t"
+    "\022\022\n\nugc_map_id\030\023 \001(\004\"\244\001\n\021CSVCMsg_ClassIn"
+    "fo\022\030\n\020create_on_client\030\001 \001(\010\022+\n\007classes\030"
+    "\002 \003(\0132\032.CSVCMsg_ClassInfo.class_t\032H\n\007cla"
+    "ss_t\022\020\n\010class_id\030\001 \001(\005\022\027\n\017data_table_nam"
+    "e\030\002 \001(\t\022\022\n\nclass_name\030\003 \001(\t\"\260\002\n\021CSVCMsg_"
+    "SendTable\022\016\n\006is_end\030\001 \001(\010\022\026\n\016net_table_n"
+    "ame\030\002 \001(\t\022\025\n\rneeds_decoder\030\003 \001(\010\022,\n\005prop"
+    "s\030\004 \003(\0132\035.CSVCMsg_SendTable.sendprop_t\032\255"
+    "\001\n\nsendprop_t\022\014\n\004type\030\001 \001(\005\022\020\n\010var_name\030"
+    "\002 \001(\t\022\r\n\005flags\030\003 \001(\005\022\020\n\010priority\030\004 \001(\005\022\017"
+    "\n\007dt_name\030\005 \001(\t\022\024\n\014num_elements\030\006 \001(\005\022\021\n"
+    "\tlow_value\030\007 \001(\002\022\022\n\nhigh_value\030\010 \001(\002\022\020\n\010"
+    "num_bits\030\t \001(\005\"\035\n\rCSVCMsg_Print\022\014\n\004text\030"
+    "\001 \001(\t\"\"\n\020CSVCMsg_SetPause\022\016\n\006paused\030\001 \001("
+    "\010\"<\n\025CSVCMsg_SetPauseTimed\022\016\n\006paused\030\001 \001"
+    "(\010\022\023\n\013expire_time\030\002 \001(\002\"\'\n\017CSVCMsg_SetVi"
+    "ew\022\024\n\014entity_index\030\001 \001(\005\"\312\001\n\031CSVCMsg_Cre"
+    "ateStringTable\022\014\n\004name\030\001 \001(\t\022\023\n\013max_entr"
+    "ies\030\002 \001(\005\022\023\n\013num_entries\030\003 \001(\005\022\034\n\024user_d"
+    "ata_fixed_size\030\004 \001(\010\022\026\n\016user_data_size\030\005"
+    " \001(\005\022\033\n\023user_data_size_bits\030\006 \001(\005\022\r\n\005fla"
+    "gs\030\007 \001(\005\022\023\n\013string_data\030\010 \001(\014\"_\n\031CSVCMsg"
+    "_UpdateStringTable\022\020\n\010table_id\030\001 \001(\005\022\033\n\023"
+    "num_changed_entries\030\002 \001(\005\022\023\n\013string_data"
+    "\030\003 \001(\014\"G\n\021CSVCMsg_VoiceInit\022\017\n\007quality\030\001"
+    " \001(\005\022\r\n\005codec\030\002 \001(\t\022\022\n\007version\030\003 \001(\005:\0010\""
+    "\217\002\n\021CSVCMsg_VoiceData\022\016\n\006client\030\001 \001(\005\022\021\n"
+    "\tproximity\030\002 \001(\010\022\014\n\004xuid\030\003 \001(\006\022\024\n\014audibl"
+    "e_mask\030\004 \001(\005\022\022\n\nvoice_data\030\005 \001(\014\022\016\n\006cast"
+    "er\030\006 \001(\010\022;\n\006format\030\007 \001(\0162\022.VoiceDataForm"
+    "at_t:\027VOICEDATA_FORMAT_ENGINE\022\026\n\016sequenc"
+    "e_bytes\030\010 \001(\005\022\026\n\016section_number\030\t \001(\r\022\"\n"
+    "\032uncompressed_sample_offset\030\n \001(\r\"@\n\020CSV"
+    "CMsg_FixAngle\022\020\n\010relative\030\001 \001(\010\022\032\n\005angle"
+    "\030\002 \001(\0132\013.CMsgQAngle\"4\n\026CSVCMsg_Crosshair"
+    "Angle\022\032\n\005angle\030\001 \001(\0132\013.CMsgQAngle\"\'\n\020CSV"
+    "CMsg_Prefetch\022\023\n\013sound_index\030\001 \001(\005\"\212\001\n\020C"
+    "SVCMsg_BSPDecal\022\030\n\003pos\030\001 \001(\0132\013.CMsgVecto"
+    "r\022\033\n\023decal_texture_index\030\002 \001(\005\022\024\n\014entity"
+    "_index\030\003 \001(\005\022\023\n\013model_index\030\004 \001(\005\022\024\n\014low"
+    "_priority\030\005 \001(\010\"z\n\023CSVCMsg_SplitScreen\022\?"
+    "\n\004type\030\001 \001(\0162\030.ESplitScreenMessageType:\027"
+    "MSG_SPLITSCREEN_ADDUSER\022\014\n\004slot\030\002 \001(\005\022\024\n"
+    "\014player_index\030\003 \001(\005\"9\n\024CSVCMsg_GetCvarVa"
+    "lue\022\016\n\006cookie\030\001 \001(\005\022\021\n\tcvar_name\030\002 \001(\t\"<"
+    "\n\014CSVCMsg_Menu\022\023\n\013dialog_type\030\001 \001(\005\022\027\n\017m"
+    "enu_key_values\030\002 \001(\014\"N\n\023CSVCMsg_UserMess"
+    "age\022\020\n\010msg_type\030\001 \001(\005\022\020\n\010msg_data\030\002 \001(\014\022"
+    "\023\n\013passthrough\030\003 \001(\005\"(\n\024CSVCMsg_Paintmap"
+    "Data\022\020\n\010paintmap\030\001 \001(\014\"\246\002\n\021CSVCMsg_GameE"
+    "vent\022\022\n\nevent_name\030\001 \001(\t\022\017\n\007eventid\030\002 \001("
+    "\005\022&\n\004keys\030\003 \003(\0132\030.CSVCMsg_GameEvent.key_"
+    "t\022\023\n\013passthrough\030\004 \001(\005\032\256\001\n\005key_t\022\014\n\004type"
+    "\030\001 \001(\005\022\022\n\nval_string\030\002 \001(\t\022\021\n\tval_float\030"
+    "\003 \001(\002\022\020\n\010val_long\030\004 \001(\005\022\021\n\tval_short\030\005 \001"
+    "(\005\022\020\n\010val_byte\030\006 \001(\005\022\020\n\010val_bool\030\007 \001(\010\022\022"
+    "\n\nval_uint64\030\010 \001(\004\022\023\n\013val_wstring\030\t \001(\014\""
+    "\321\001\n\025CSVCMsg_GameEventList\0228\n\013descriptors"
+    "\030\001 \003(\0132#.CSVCMsg_GameEventList.descripto"
+    "r_t\032#\n\005key_t\022\014\n\004type\030\001 \001(\005\022\014\n\004name\030\002 \001(\t"
+    "\032Y\n\014descriptor_t\022\017\n\007eventid\030\001 \001(\005\022\014\n\004nam"
+    "e\030\002 \001(\t\022*\n\004keys\030\003 \003(\0132\034.CSVCMsg_GameEven"
+    "tList.key_t\"R\n\024CSVCMsg_TempEntities\022\020\n\010r"
+    "eliable\030\001 \001(\010\022\023\n\013num_entries\030\002 \001(\005\022\023\n\013en"
+    "tity_data\030\003 \001(\014\"\254\001\n\026CSVCMsg_PacketEntiti"
+    "es\022\023\n\013max_entries\030\001 \001(\005\022\027\n\017updated_entri"
+    "es\030\002 \001(\005\022\020\n\010is_delta\030\003 \001(\010\022\027\n\017update_bas"
+    "eline\030\004 \001(\010\022\020\n\010baseline\030\005 \001(\005\022\022\n\ndelta_f"
+    "rom\030\006 \001(\005\022\023\n\013entity_data\030\007 \001(\014\"\266\003\n\016CSVCM"
+    "sg_Sounds\022\026\n\016reliable_sound\030\001 \001(\010\022+\n\006sou"
+    "nds\030\002 \003(\0132\033.CSVCMsg_Sounds.sounddata_t\032\336"
+    "\002\n\013sounddata_t\022\020\n\010origin_x\030\001 \001(\021\022\020\n\010orig"
+    "in_y\030\002 \001(\021\022\020\n\010origin_z\030\003 \001(\021\022\016\n\006volume\030\004"
+    " \001(\r\022\023\n\013delay_value\030\005 \001(\002\022\027\n\017sequence_nu"
+    "mber\030\006 \001(\005\022\024\n\014entity_index\030\007 \001(\005\022\017\n\007chan"
+    "nel\030\010 \001(\005\022\r\n\005pitch\030\t \001(\005\022\r\n\005flags\030\n \001(\005\022"
+    "\021\n\tsound_num\030\013 \001(\r\022\030\n\020sound_num_handle\030\014"
+    " \001(\007\022\026\n\016speaker_entity\030\r \001(\005\022\023\n\013random_s"
+    "eed\030\016 \001(\005\022\023\n\013sound_level\030\017 \001(\005\022\023\n\013is_sen"
+    "tence\030\020 \001(\010\022\022\n\nis_ambient\030\021 \001(\010\"J\n\021CSVCM"
+    "sg_EntityMsg\022\021\n\tent_index\030\001 \001(\005\022\020\n\010class"
+    "_id\030\002 \001(\005\022\020\n\010ent_data\030\003 \001(\014\")\n\024CSVCMsg_C"
+    "mdKeyValues\022\021\n\tkeyvalues\030\001 \001(\014\"<\n\025CSVCMs"
+    "g_EncryptedData\022\021\n\tencrypted\030\001 \001(\014\022\020\n\010ke"
+    "y_type\030\002 \001(\005\"\326\001\n\022CSVCMsg_HltvReplay\022\r\n\005d"
+    "elay\030\001 \001(\005\022\026\n\016primary_target\030\002 \001(\005\022\026\n\016re"
+    "play_stop_at\030\003 \001(\005\022\027\n\017replay_start_at\030\004 "
+    "\001(\005\022\035\n\025replay_slowdown_begin\030\005 \001(\005\022\033\n\023re"
+    "play_slowdown_end\030\006 \001(\005\022\034\n\024replay_slowdo"
+    "wn_rate\030\007 \001(\002\022\016\n\006reason\030\010 \001(\005\"\213\001\n\022CCLCMs"
+    "g_HltvReplay\022\017\n\007request\030\001 \001(\005\022\027\n\017slowdow"
+    "n_length\030\002 \001(\002\022\025\n\rslowdown_rate\030\003 \001(\002\022 \n"
+    "\030primary_target_ent_index\030\004 \001(\005\022\022\n\nevent"
+    "_time\030\005 \001(\002\"(\n\031CSVCMsg_Broadcast_Command"
+    "\022\013\n\003cmd\030\001 \001(\t\"\357\001\n\035CCLCMsg_HltvFixupOpera"
+    "torTick\022\014\n\004tick\030\001 \001(\005\022\022\n\nprops_data\030\002 \001("
+    "\014\022\033\n\006origin\030\003 \001(\0132\013.CMsgVector\022\037\n\neye_an"
+    "gles\030\004 \001(\0132\013.CMsgQAngle\022\025\n\robserver_mode"
+    "\030\005 \001(\005\022\034\n\024cameraman_scoreboard\030\006 \001(\010\022\027\n\017"
+    "observer_target\030\007 \001(\005\022 \n\013view_offset\030\010 \001"
+    "(\0132\013.CMsgVector\"O\n\037CSVCMsg_HltvFixupOper"
+    "atorStatus\022\014\n\004mode\030\001 \001(\r\022\036\n\026override_ope"
+    "rator_name\030\002 \001(\t*\271\001\n\014NET_Messages\022\013\n\007net"
+    "_NOP\020\000\022\022\n\016net_Disconnect\020\001\022\014\n\010net_File\020\002"
+    "\022\027\n\023net_SplitScreenUser\020\003\022\014\n\010net_Tick\020\004\022"
+    "\021\n\rnet_StringCmd\020\005\022\021\n\rnet_SetConVar\020\006\022\023\n"
+    "\017net_SignonState\020\007\022\030\n\024net_PlayerAvatarDa"
+    "ta\020d*\326\002\n\014CLC_Messages\022\022\n\016clc_ClientInfo\020"
+    "\010\022\014\n\010clc_Move\020\t\022\021\n\rclc_VoiceData\020\n\022\023\n\017cl"
+    "c_BaselineAck\020\013\022\024\n\020clc_ListenEvents\020\014\022\030\n"
+    "\024clc_RespondCvarValue\020\r\022\024\n\020clc_FileCRCCh"
+    "eck\020\016\022\027\n\023clc_LoadingProgress\020\017\022\032\n\026clc_Sp"
+    "litPlayerConnect\020\020\022\025\n\021clc_ClientMessage\020"
+    "\021\022\024\n\020clc_CmdKeyValues\020\022\022\022\n\016clc_HltvRepla"
+    "y\020\024\022\035\n\031clc_HltvFixupOperatorTick\020\025\022!\n\035cl"
+    "c_HltvFixupOperatorReceiver\020\026*L\n\021VoiceDa"
+    "taFormat_t\022\032\n\026VOICEDATA_FORMAT_STEAM\020\000\022\033"
+    "\n\027VOICEDATA_FORMAT_ENGINE\020\001*y\n\027ESplitScr"
+    "eenMessageType\022\033\n\027MSG_SPLITSCREEN_ADDUSE"
+    "R\020\000\022\036\n\032MSG_SPLITSCREEN_REMOVEUSER\020\001\022\035\n\031M"
+    "SG_SPLITSCREEN_TYPE_BITS\020\001\032\002\020\001*\233\005\n\014SVC_M"
+    "essages\022\022\n\016svc_ServerInfo\020\010\022\021\n\rsvc_SendT"
+    "able\020\t\022\021\n\rsvc_ClassInfo\020\n\022\020\n\014svc_SetPaus"
+    "e\020\013\022\031\n\025svc_CreateStringTable\020\014\022\031\n\025svc_Up"
+    "dateStringTable\020\r\022\021\n\rsvc_VoiceInit\020\016\022\021\n\r"
+    "svc_VoiceData\020\017\022\r\n\tsvc_Print\020\020\022\016\n\nsvc_So"
+    "unds\020\021\022\017\n\013svc_SetView\020\022\022\020\n\014svc_FixAngle\020"
+    "\023\022\026\n\022svc_CrosshairAngle\020\024\022\020\n\014svc_BSPDeca"
+    "l\020\025\022\023\n\017svc_SplitScreen\020\026\022\023\n\017svc_UserMess"
+    "age\020\027\022\025\n\021svc_EntityMessage\020\030\022\021\n\rsvc_Game"
+    "Event\020\031\022\026\n\022svc_PacketEntities\020\032\022\024\n\020svc_T"
+    "empEntities\020\033\022\020\n\014svc_Prefetch\020\034\022\014\n\010svc_M"
+    "enu\020\035\022\025\n\021svc_GameEventList\020\036\022\024\n\020svc_GetC"
+    "varValue\020\037\022\024\n\020svc_PaintmapData\020!\022\024\n\020svc_"
+    "CmdKeyValues\020\"\022\025\n\021svc_EncryptedData\020#\022\022\n"
+    "\016svc_HltvReplay\020$\022\031\n\025svc_Broadcast_Comma"
+    "nd\020&\022\037\n\033svc_HltvFixupOperatorStatus\020\'\022\025\n"
+    "\021svc_SetPauseTimed\020(*\241\001\n\021ReplayEventType"
+    "_t\022\027\n\023REPLAY_EVENT_CANCEL\020\000\022\026\n\022REPLAY_EV"
+    "ENT_DEATH\020\001\022\030\n\024REPLAY_EVENT_GENERIC\020\002\022\'\n"
+    "#REPLAY_EVENT_STUCK_NEED_FULL_UPDATE\020\003\022\030"
+    "\n\024REPLAY_EVENT_VICTORY\020\004B\003\200\001\000", 7909);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "netmessages.proto", &protobuf_RegisterTypes);
-  CMsgVector::default_instance_ = new CMsgVector();
-  CMsgVector2D::default_instance_ = new CMsgVector2D();
-  CMsgQAngle::default_instance_ = new CMsgQAngle();
-  CMsgRGBA::default_instance_ = new CMsgRGBA();
   CNETMsg_Tick::default_instance_ = new CNETMsg_Tick();
   CNETMsg_StringCmd::default_instance_ = new CNETMsg_StringCmd();
   CNETMsg_SignonState::default_instance_ = new CNETMsg_SignonState();
@@ -1869,6 +1779,7 @@ void protobuf_AddDesc_netmessages_2eproto() {
   CSVCMsg_SendTable_sendprop_t::default_instance_ = new CSVCMsg_SendTable_sendprop_t();
   CSVCMsg_Print::default_instance_ = new CSVCMsg_Print();
   CSVCMsg_SetPause::default_instance_ = new CSVCMsg_SetPause();
+  CSVCMsg_SetPauseTimed::default_instance_ = new CSVCMsg_SetPauseTimed();
   CSVCMsg_SetView::default_instance_ = new CSVCMsg_SetView();
   CSVCMsg_CreateStringTable::default_instance_ = new CSVCMsg_CreateStringTable();
   CSVCMsg_UpdateStringTable::default_instance_ = new CSVCMsg_UpdateStringTable();
@@ -1900,10 +1811,6 @@ void protobuf_AddDesc_netmessages_2eproto() {
   CSVCMsg_Broadcast_Command::default_instance_ = new CSVCMsg_Broadcast_Command();
   CCLCMsg_HltvFixupOperatorTick::default_instance_ = new CCLCMsg_HltvFixupOperatorTick();
   CSVCMsg_HltvFixupOperatorStatus::default_instance_ = new CSVCMsg_HltvFixupOperatorStatus();
-  CMsgVector::default_instance_->InitAsDefaultInstance();
-  CMsgVector2D::default_instance_->InitAsDefaultInstance();
-  CMsgQAngle::default_instance_->InitAsDefaultInstance();
-  CMsgRGBA::default_instance_->InitAsDefaultInstance();
   CNETMsg_Tick::default_instance_->InitAsDefaultInstance();
   CNETMsg_StringCmd::default_instance_->InitAsDefaultInstance();
   CNETMsg_SignonState::default_instance_->InitAsDefaultInstance();
@@ -1932,6 +1839,7 @@ void protobuf_AddDesc_netmessages_2eproto() {
   CSVCMsg_SendTable_sendprop_t::default_instance_->InitAsDefaultInstance();
   CSVCMsg_Print::default_instance_->InitAsDefaultInstance();
   CSVCMsg_SetPause::default_instance_->InitAsDefaultInstance();
+  CSVCMsg_SetPauseTimed::default_instance_->InitAsDefaultInstance();
   CSVCMsg_SetView::default_instance_->InitAsDefaultInstance();
   CSVCMsg_CreateStringTable::default_instance_->InitAsDefaultInstance();
   CSVCMsg_UpdateStringTable::default_instance_->InitAsDefaultInstance();
@@ -2083,6 +1991,7 @@ bool SVC_Messages_IsValid(int value) {
     case 36:
     case 38:
     case 39:
+    case 40:
       return true;
     default:
       return false;
@@ -2104,1142 +2013,6 @@ bool ReplayEventType_t_IsValid(int value) {
     default:
       return false;
   }
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int CMsgVector::kXFieldNumber;
-const int CMsgVector::kYFieldNumber;
-const int CMsgVector::kZFieldNumber;
-#endif  // !_MSC_VER
-
-CMsgVector::CMsgVector()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-}
-
-void CMsgVector::InitAsDefaultInstance() {
-}
-
-CMsgVector::CMsgVector(const CMsgVector& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-}
-
-void CMsgVector::SharedCtor() {
-  _cached_size_ = 0;
-  x_ = 0;
-  y_ = 0;
-  z_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-CMsgVector::~CMsgVector() {
-  SharedDtor();
-}
-
-void CMsgVector::SharedDtor() {
-  if (this != default_instance_) {
-  }
-}
-
-void CMsgVector::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* CMsgVector::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return CMsgVector_descriptor_;
-}
-
-const CMsgVector& CMsgVector::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_netmessages_2eproto();
-  return *default_instance_;
-}
-
-CMsgVector* CMsgVector::default_instance_ = NULL;
-
-CMsgVector* CMsgVector::New() const {
-  return new CMsgVector;
-}
-
-void CMsgVector::Clear() {
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    x_ = 0;
-    y_ = 0;
-    z_ = 0;
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool CMsgVector::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
-  ::google::protobuf::uint32 tag;
-  while ((tag = input->ReadTag()) != 0) {
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional float x = 1;
-      case 1: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &x_)));
-          set_has_x();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(21)) goto parse_y;
-        break;
-      }
-
-      // optional float y = 2;
-      case 2: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-         parse_y:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &y_)));
-          set_has_y();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(29)) goto parse_z;
-        break;
-      }
-
-      // optional float z = 3;
-      case 3: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-         parse_z:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &z_)));
-          set_has_z();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectAtEnd()) return true;
-        break;
-      }
-
-      default: {
-      handle_uninterpreted:
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          return true;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-  return true;
-#undef DO_
-}
-
-void CMsgVector::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional float x = 1;
-  if (has_x()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->x(), output);
-  }
-
-  // optional float y = 2;
-  if (has_y()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->y(), output);
-  }
-
-  // optional float z = 3;
-  if (has_z()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->z(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-}
-
-::google::protobuf::uint8* CMsgVector::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // optional float x = 1;
-  if (has_x()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->x(), target);
-  }
-
-  // optional float y = 2;
-  if (has_y()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->y(), target);
-  }
-
-  // optional float z = 3;
-  if (has_z()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->z(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  return target;
-}
-
-int CMsgVector::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional float x = 1;
-    if (has_x()) {
-      total_size += 1 + 4;
-    }
-
-    // optional float y = 2;
-    if (has_y()) {
-      total_size += 1 + 4;
-    }
-
-    // optional float z = 3;
-    if (has_z()) {
-      total_size += 1 + 4;
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void CMsgVector::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const CMsgVector* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgVector*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void CMsgVector::MergeFrom(const CMsgVector& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_x()) {
-      set_x(from.x());
-    }
-    if (from.has_y()) {
-      set_y(from.y());
-    }
-    if (from.has_z()) {
-      set_z(from.z());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void CMsgVector::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void CMsgVector::CopyFrom(const CMsgVector& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CMsgVector::IsInitialized() const {
-
-  return true;
-}
-
-void CMsgVector::Swap(CMsgVector* other) {
-  if (other != this) {
-    std::swap(x_, other->x_);
-    std::swap(y_, other->y_);
-    std::swap(z_, other->z_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata CMsgVector::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = CMsgVector_descriptor_;
-  metadata.reflection = CMsgVector_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int CMsgVector2D::kXFieldNumber;
-const int CMsgVector2D::kYFieldNumber;
-#endif  // !_MSC_VER
-
-CMsgVector2D::CMsgVector2D()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-}
-
-void CMsgVector2D::InitAsDefaultInstance() {
-}
-
-CMsgVector2D::CMsgVector2D(const CMsgVector2D& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-}
-
-void CMsgVector2D::SharedCtor() {
-  _cached_size_ = 0;
-  x_ = 0;
-  y_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-CMsgVector2D::~CMsgVector2D() {
-  SharedDtor();
-}
-
-void CMsgVector2D::SharedDtor() {
-  if (this != default_instance_) {
-  }
-}
-
-void CMsgVector2D::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* CMsgVector2D::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return CMsgVector2D_descriptor_;
-}
-
-const CMsgVector2D& CMsgVector2D::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_netmessages_2eproto();
-  return *default_instance_;
-}
-
-CMsgVector2D* CMsgVector2D::default_instance_ = NULL;
-
-CMsgVector2D* CMsgVector2D::New() const {
-  return new CMsgVector2D;
-}
-
-void CMsgVector2D::Clear() {
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    x_ = 0;
-    y_ = 0;
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool CMsgVector2D::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
-  ::google::protobuf::uint32 tag;
-  while ((tag = input->ReadTag()) != 0) {
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional float x = 1;
-      case 1: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &x_)));
-          set_has_x();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(21)) goto parse_y;
-        break;
-      }
-
-      // optional float y = 2;
-      case 2: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-         parse_y:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &y_)));
-          set_has_y();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectAtEnd()) return true;
-        break;
-      }
-
-      default: {
-      handle_uninterpreted:
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          return true;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-  return true;
-#undef DO_
-}
-
-void CMsgVector2D::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional float x = 1;
-  if (has_x()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->x(), output);
-  }
-
-  // optional float y = 2;
-  if (has_y()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->y(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-}
-
-::google::protobuf::uint8* CMsgVector2D::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // optional float x = 1;
-  if (has_x()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->x(), target);
-  }
-
-  // optional float y = 2;
-  if (has_y()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->y(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  return target;
-}
-
-int CMsgVector2D::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional float x = 1;
-    if (has_x()) {
-      total_size += 1 + 4;
-    }
-
-    // optional float y = 2;
-    if (has_y()) {
-      total_size += 1 + 4;
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void CMsgVector2D::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const CMsgVector2D* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgVector2D*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void CMsgVector2D::MergeFrom(const CMsgVector2D& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_x()) {
-      set_x(from.x());
-    }
-    if (from.has_y()) {
-      set_y(from.y());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void CMsgVector2D::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void CMsgVector2D::CopyFrom(const CMsgVector2D& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CMsgVector2D::IsInitialized() const {
-
-  return true;
-}
-
-void CMsgVector2D::Swap(CMsgVector2D* other) {
-  if (other != this) {
-    std::swap(x_, other->x_);
-    std::swap(y_, other->y_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata CMsgVector2D::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = CMsgVector2D_descriptor_;
-  metadata.reflection = CMsgVector2D_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int CMsgQAngle::kXFieldNumber;
-const int CMsgQAngle::kYFieldNumber;
-const int CMsgQAngle::kZFieldNumber;
-#endif  // !_MSC_VER
-
-CMsgQAngle::CMsgQAngle()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-}
-
-void CMsgQAngle::InitAsDefaultInstance() {
-}
-
-CMsgQAngle::CMsgQAngle(const CMsgQAngle& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-}
-
-void CMsgQAngle::SharedCtor() {
-  _cached_size_ = 0;
-  x_ = 0;
-  y_ = 0;
-  z_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-CMsgQAngle::~CMsgQAngle() {
-  SharedDtor();
-}
-
-void CMsgQAngle::SharedDtor() {
-  if (this != default_instance_) {
-  }
-}
-
-void CMsgQAngle::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* CMsgQAngle::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return CMsgQAngle_descriptor_;
-}
-
-const CMsgQAngle& CMsgQAngle::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_netmessages_2eproto();
-  return *default_instance_;
-}
-
-CMsgQAngle* CMsgQAngle::default_instance_ = NULL;
-
-CMsgQAngle* CMsgQAngle::New() const {
-  return new CMsgQAngle;
-}
-
-void CMsgQAngle::Clear() {
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    x_ = 0;
-    y_ = 0;
-    z_ = 0;
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool CMsgQAngle::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
-  ::google::protobuf::uint32 tag;
-  while ((tag = input->ReadTag()) != 0) {
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional float x = 1;
-      case 1: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &x_)));
-          set_has_x();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(21)) goto parse_y;
-        break;
-      }
-
-      // optional float y = 2;
-      case 2: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-         parse_y:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &y_)));
-          set_has_y();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(29)) goto parse_z;
-        break;
-      }
-
-      // optional float z = 3;
-      case 3: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-         parse_z:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &z_)));
-          set_has_z();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectAtEnd()) return true;
-        break;
-      }
-
-      default: {
-      handle_uninterpreted:
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          return true;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-  return true;
-#undef DO_
-}
-
-void CMsgQAngle::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional float x = 1;
-  if (has_x()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->x(), output);
-  }
-
-  // optional float y = 2;
-  if (has_y()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->y(), output);
-  }
-
-  // optional float z = 3;
-  if (has_z()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->z(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-}
-
-::google::protobuf::uint8* CMsgQAngle::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // optional float x = 1;
-  if (has_x()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->x(), target);
-  }
-
-  // optional float y = 2;
-  if (has_y()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->y(), target);
-  }
-
-  // optional float z = 3;
-  if (has_z()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->z(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  return target;
-}
-
-int CMsgQAngle::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional float x = 1;
-    if (has_x()) {
-      total_size += 1 + 4;
-    }
-
-    // optional float y = 2;
-    if (has_y()) {
-      total_size += 1 + 4;
-    }
-
-    // optional float z = 3;
-    if (has_z()) {
-      total_size += 1 + 4;
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void CMsgQAngle::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const CMsgQAngle* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgQAngle*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void CMsgQAngle::MergeFrom(const CMsgQAngle& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_x()) {
-      set_x(from.x());
-    }
-    if (from.has_y()) {
-      set_y(from.y());
-    }
-    if (from.has_z()) {
-      set_z(from.z());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void CMsgQAngle::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void CMsgQAngle::CopyFrom(const CMsgQAngle& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CMsgQAngle::IsInitialized() const {
-
-  return true;
-}
-
-void CMsgQAngle::Swap(CMsgQAngle* other) {
-  if (other != this) {
-    std::swap(x_, other->x_);
-    std::swap(y_, other->y_);
-    std::swap(z_, other->z_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata CMsgQAngle::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = CMsgQAngle_descriptor_;
-  metadata.reflection = CMsgQAngle_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int CMsgRGBA::kRFieldNumber;
-const int CMsgRGBA::kGFieldNumber;
-const int CMsgRGBA::kBFieldNumber;
-const int CMsgRGBA::kAFieldNumber;
-#endif  // !_MSC_VER
-
-CMsgRGBA::CMsgRGBA()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-}
-
-void CMsgRGBA::InitAsDefaultInstance() {
-}
-
-CMsgRGBA::CMsgRGBA(const CMsgRGBA& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-}
-
-void CMsgRGBA::SharedCtor() {
-  _cached_size_ = 0;
-  r_ = 0;
-  g_ = 0;
-  b_ = 0;
-  a_ = 0;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-CMsgRGBA::~CMsgRGBA() {
-  SharedDtor();
-}
-
-void CMsgRGBA::SharedDtor() {
-  if (this != default_instance_) {
-  }
-}
-
-void CMsgRGBA::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* CMsgRGBA::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return CMsgRGBA_descriptor_;
-}
-
-const CMsgRGBA& CMsgRGBA::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_netmessages_2eproto();
-  return *default_instance_;
-}
-
-CMsgRGBA* CMsgRGBA::default_instance_ = NULL;
-
-CMsgRGBA* CMsgRGBA::New() const {
-  return new CMsgRGBA;
-}
-
-void CMsgRGBA::Clear() {
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    r_ = 0;
-    g_ = 0;
-    b_ = 0;
-    a_ = 0;
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool CMsgRGBA::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
-  ::google::protobuf::uint32 tag;
-  while ((tag = input->ReadTag()) != 0) {
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional int32 r = 1;
-      case 1: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &r_)));
-          set_has_r();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(16)) goto parse_g;
-        break;
-      }
-
-      // optional int32 g = 2;
-      case 2: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_g:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &g_)));
-          set_has_g();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(24)) goto parse_b;
-        break;
-      }
-
-      // optional int32 b = 3;
-      case 3: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_b:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &b_)));
-          set_has_b();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(32)) goto parse_a;
-        break;
-      }
-
-      // optional int32 a = 4;
-      case 4: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_a:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &a_)));
-          set_has_a();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectAtEnd()) return true;
-        break;
-      }
-
-      default: {
-      handle_uninterpreted:
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          return true;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-  return true;
-#undef DO_
-}
-
-void CMsgRGBA::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // optional int32 r = 1;
-  if (has_r()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->r(), output);
-  }
-
-  // optional int32 g = 2;
-  if (has_g()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->g(), output);
-  }
-
-  // optional int32 b = 3;
-  if (has_b()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->b(), output);
-  }
-
-  // optional int32 a = 4;
-  if (has_a()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->a(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-}
-
-::google::protobuf::uint8* CMsgRGBA::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // optional int32 r = 1;
-  if (has_r()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->r(), target);
-  }
-
-  // optional int32 g = 2;
-  if (has_g()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->g(), target);
-  }
-
-  // optional int32 b = 3;
-  if (has_b()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->b(), target);
-  }
-
-  // optional int32 a = 4;
-  if (has_a()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->a(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  return target;
-}
-
-int CMsgRGBA::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional int32 r = 1;
-    if (has_r()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->r());
-    }
-
-    // optional int32 g = 2;
-    if (has_g()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->g());
-    }
-
-    // optional int32 b = 3;
-    if (has_b()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->b());
-    }
-
-    // optional int32 a = 4;
-    if (has_a()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->a());
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void CMsgRGBA::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const CMsgRGBA* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgRGBA*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void CMsgRGBA::MergeFrom(const CMsgRGBA& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_r()) {
-      set_r(from.r());
-    }
-    if (from.has_g()) {
-      set_g(from.g());
-    }
-    if (from.has_b()) {
-      set_b(from.b());
-    }
-    if (from.has_a()) {
-      set_a(from.a());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void CMsgRGBA::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void CMsgRGBA::CopyFrom(const CMsgRGBA& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CMsgRGBA::IsInitialized() const {
-
-  return true;
-}
-
-void CMsgRGBA::Swap(CMsgRGBA* other) {
-  if (other != this) {
-    std::swap(r_, other->r_);
-    std::swap(g_, other->g_);
-    std::swap(b_, other->b_);
-    std::swap(a_, other->a_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata CMsgRGBA::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = CMsgRGBA_descriptor_;
-  metadata.reflection = CMsgRGBA_reflection_;
-  return metadata;
 }
 
 
@@ -6159,7 +4932,6 @@ void CNETMsg_PlayerAvatarData::Swap(CNETMsg_PlayerAvatarData* other) {
 const int CCLCMsg_ClientInfo::kSendTableCrcFieldNumber;
 const int CCLCMsg_ClientInfo::kServerCountFieldNumber;
 const int CCLCMsg_ClientInfo::kIsHltvFieldNumber;
-const int CCLCMsg_ClientInfo::kIsReplayFieldNumber;
 const int CCLCMsg_ClientInfo::kFriendsIdFieldNumber;
 const int CCLCMsg_ClientInfo::kFriendsNameFieldNumber;
 const int CCLCMsg_ClientInfo::kCustomFilesFieldNumber;
@@ -6184,7 +4956,6 @@ void CCLCMsg_ClientInfo::SharedCtor() {
   send_table_crc_ = 0u;
   server_count_ = 0u;
   is_hltv_ = false;
-  is_replay_ = false;
   friends_id_ = 0u;
   friends_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -6228,7 +4999,6 @@ void CCLCMsg_ClientInfo::Clear() {
     send_table_crc_ = 0u;
     server_count_ = 0u;
     is_hltv_ = false;
-    is_replay_ = false;
     friends_id_ = 0u;
     if (has_friends_name()) {
       if (friends_name_ != &::google::protobuf::internal::kEmptyString) {
@@ -6290,28 +5060,12 @@ bool CCLCMsg_ClientInfo::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(32)) goto parse_is_replay;
+        if (input->ExpectTag(32)) goto parse_friends_id;
         break;
       }
 
-      // optional bool is_replay = 4;
+      // optional uint32 friends_id = 4;
       case 4: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_is_replay:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &is_replay_)));
-          set_has_is_replay();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(40)) goto parse_friends_id;
-        break;
-      }
-
-      // optional uint32 friends_id = 5;
-      case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_friends_id:
@@ -6322,12 +5076,12 @@ bool CCLCMsg_ClientInfo::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(50)) goto parse_friends_name;
+        if (input->ExpectTag(42)) goto parse_friends_name;
         break;
       }
 
-      // optional string friends_name = 6;
-      case 6: {
+      // optional string friends_name = 5;
+      case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_friends_name:
@@ -6339,18 +5093,18 @@ bool CCLCMsg_ClientInfo::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(61)) goto parse_custom_files;
+        if (input->ExpectTag(53)) goto parse_custom_files;
         break;
       }
 
-      // repeated fixed32 custom_files = 7;
-      case 7: {
+      // repeated fixed32 custom_files = 6;
+      case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
          parse_custom_files:
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
-                 1, 61, input, this->mutable_custom_files())));
+                 1, 53, input, this->mutable_custom_files())));
         } else if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag)
                    == ::google::protobuf::internal::WireFormatLite::
                       WIRETYPE_LENGTH_DELIMITED) {
@@ -6360,7 +5114,7 @@ bool CCLCMsg_ClientInfo::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(61)) goto parse_custom_files;
+        if (input->ExpectTag(53)) goto parse_custom_files;
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -6398,29 +5152,24 @@ void CCLCMsg_ClientInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->is_hltv(), output);
   }
 
-  // optional bool is_replay = 4;
-  if (has_is_replay()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->is_replay(), output);
-  }
-
-  // optional uint32 friends_id = 5;
+  // optional uint32 friends_id = 4;
   if (has_friends_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->friends_id(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->friends_id(), output);
   }
 
-  // optional string friends_name = 6;
+  // optional string friends_name = 5;
   if (has_friends_name()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->friends_name().data(), this->friends_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      6, this->friends_name(), output);
+      5, this->friends_name(), output);
   }
 
-  // repeated fixed32 custom_files = 7;
+  // repeated fixed32 custom_files = 6;
   for (int i = 0; i < this->custom_files_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteFixed32(
-      7, this->custom_files(i), output);
+      6, this->custom_files(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -6446,30 +5195,25 @@ void CCLCMsg_ClientInfo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->is_hltv(), target);
   }
 
-  // optional bool is_replay = 4;
-  if (has_is_replay()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->is_replay(), target);
-  }
-
-  // optional uint32 friends_id = 5;
+  // optional uint32 friends_id = 4;
   if (has_friends_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->friends_id(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->friends_id(), target);
   }
 
-  // optional string friends_name = 6;
+  // optional string friends_name = 5;
   if (has_friends_name()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->friends_name().data(), this->friends_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        6, this->friends_name(), target);
+        5, this->friends_name(), target);
   }
 
-  // repeated fixed32 custom_files = 7;
+  // repeated fixed32 custom_files = 6;
   for (int i = 0; i < this->custom_files_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteFixed32ToArray(7, this->custom_files(i), target);
+      WriteFixed32ToArray(6, this->custom_files(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -6500,19 +5244,14 @@ int CCLCMsg_ClientInfo::ByteSize() const {
       total_size += 1 + 1;
     }
 
-    // optional bool is_replay = 4;
-    if (has_is_replay()) {
-      total_size += 1 + 1;
-    }
-
-    // optional uint32 friends_id = 5;
+    // optional uint32 friends_id = 4;
     if (has_friends_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
           this->friends_id());
     }
 
-    // optional string friends_name = 6;
+    // optional string friends_name = 5;
     if (has_friends_name()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -6520,7 +5259,7 @@ int CCLCMsg_ClientInfo::ByteSize() const {
     }
 
   }
-  // repeated fixed32 custom_files = 7;
+  // repeated fixed32 custom_files = 6;
   {
     int data_size = 0;
     data_size = 4 * this->custom_files_size();
@@ -6563,9 +5302,6 @@ void CCLCMsg_ClientInfo::MergeFrom(const CCLCMsg_ClientInfo& from) {
     if (from.has_is_hltv()) {
       set_is_hltv(from.is_hltv());
     }
-    if (from.has_is_replay()) {
-      set_is_replay(from.is_replay());
-    }
     if (from.has_friends_id()) {
       set_friends_id(from.friends_id());
     }
@@ -6598,7 +5334,6 @@ void CCLCMsg_ClientInfo::Swap(CCLCMsg_ClientInfo* other) {
     std::swap(send_table_crc_, other->send_table_crc_);
     std::swap(server_count_, other->server_count_);
     std::swap(is_hltv_, other->is_hltv_);
-    std::swap(is_replay_, other->is_replay_);
     std::swap(friends_id_, other->friends_id_);
     std::swap(friends_name_, other->friends_name_);
     custom_files_.Swap(&other->custom_files_);
@@ -9450,13 +8185,12 @@ void CCLCMsg_CmdKeyValues::Swap(CCLCMsg_CmdKeyValues* other) {
 const int CSVCMsg_ServerInfo::kProtocolFieldNumber;
 const int CSVCMsg_ServerInfo::kServerCountFieldNumber;
 const int CSVCMsg_ServerInfo::kIsDedicatedFieldNumber;
-const int CSVCMsg_ServerInfo::kIsOfficialValveServerFieldNumber;
+const int CSVCMsg_ServerInfo::kIsOfficialFieldNumber;
+const int CSVCMsg_ServerInfo::kIsProtectedFieldNumber;
 const int CSVCMsg_ServerInfo::kIsHltvFieldNumber;
-const int CSVCMsg_ServerInfo::kIsReplayFieldNumber;
 const int CSVCMsg_ServerInfo::kIsRedirectingToProxyRelayFieldNumber;
 const int CSVCMsg_ServerInfo::kCOsFieldNumber;
-const int CSVCMsg_ServerInfo::kMapCrcFieldNumber;
-const int CSVCMsg_ServerInfo::kClientCrcFieldNumber;
+const int CSVCMsg_ServerInfo::kWorldmapCrcFieldNumber;
 const int CSVCMsg_ServerInfo::kStringTableCrcFieldNumber;
 const int CSVCMsg_ServerInfo::kMaxClientsFieldNumber;
 const int CSVCMsg_ServerInfo::kMaxClassesFieldNumber;
@@ -9465,12 +8199,8 @@ const int CSVCMsg_ServerInfo::kTickIntervalFieldNumber;
 const int CSVCMsg_ServerInfo::kGameDirFieldNumber;
 const int CSVCMsg_ServerInfo::kMapNameFieldNumber;
 const int CSVCMsg_ServerInfo::kMapGroupNameFieldNumber;
-const int CSVCMsg_ServerInfo::kSkyNameFieldNumber;
 const int CSVCMsg_ServerInfo::kHostNameFieldNumber;
-const int CSVCMsg_ServerInfo::kPublicIpFieldNumber;
 const int CSVCMsg_ServerInfo::kUgcMapIdFieldNumber;
-const int CSVCMsg_ServerInfo::kAllowLooseFileLoadsFieldNumber;
-const int CSVCMsg_ServerInfo::kAllowUserWorkshopContentFieldNumber;
 #endif  // !_MSC_VER
 
 CSVCMsg_ServerInfo::CSVCMsg_ServerInfo()
@@ -9492,13 +8222,12 @@ void CSVCMsg_ServerInfo::SharedCtor() {
   protocol_ = 0;
   server_count_ = 0;
   is_dedicated_ = false;
-  is_official_valve_server_ = false;
+  is_official_ = false;
+  is_protected_ = false;
   is_hltv_ = false;
-  is_replay_ = false;
   is_redirecting_to_proxy_relay_ = false;
   c_os_ = 0;
-  map_crc_ = 0u;
-  client_crc_ = 0u;
+  worldmap_crc_ = 0u;
   string_table_crc_ = 0u;
   max_clients_ = 0;
   max_classes_ = 0;
@@ -9507,12 +8236,8 @@ void CSVCMsg_ServerInfo::SharedCtor() {
   game_dir_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   map_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   map_group_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  sky_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   host_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  public_ip_ = 0u;
   ugc_map_id_ = GOOGLE_ULONGLONG(0);
-  allow_loose_file_loads_ = false;
-  allow_user_workshop_content_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -9529,9 +8254,6 @@ void CSVCMsg_ServerInfo::SharedDtor() {
   }
   if (map_group_name_ != &::google::protobuf::internal::kEmptyString) {
     delete map_group_name_;
-  }
-  if (sky_name_ != &::google::protobuf::internal::kEmptyString) {
-    delete sky_name_;
   }
   if (host_name_ != &::google::protobuf::internal::kEmptyString) {
     delete host_name_;
@@ -9566,15 +8288,14 @@ void CSVCMsg_ServerInfo::Clear() {
     protocol_ = 0;
     server_count_ = 0;
     is_dedicated_ = false;
-    is_official_valve_server_ = false;
+    is_official_ = false;
+    is_protected_ = false;
     is_hltv_ = false;
-    is_replay_ = false;
     is_redirecting_to_proxy_relay_ = false;
     c_os_ = 0;
   }
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    map_crc_ = 0u;
-    client_crc_ = 0u;
+    worldmap_crc_ = 0u;
     string_table_crc_ = 0u;
     max_clients_ = 0;
     max_classes_ = 0;
@@ -9585,21 +8306,16 @@ void CSVCMsg_ServerInfo::Clear() {
         game_dir_->clear();
       }
     }
-  }
-  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     if (has_map_name()) {
       if (map_name_ != &::google::protobuf::internal::kEmptyString) {
         map_name_->clear();
       }
     }
+  }
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     if (has_map_group_name()) {
       if (map_group_name_ != &::google::protobuf::internal::kEmptyString) {
         map_group_name_->clear();
-      }
-    }
-    if (has_sky_name()) {
-      if (sky_name_ != &::google::protobuf::internal::kEmptyString) {
-        sky_name_->clear();
       }
     }
     if (has_host_name()) {
@@ -9607,10 +8323,7 @@ void CSVCMsg_ServerInfo::Clear() {
         host_name_->clear();
       }
     }
-    public_ip_ = 0u;
     ugc_map_id_ = GOOGLE_ULONGLONG(0);
-    allow_loose_file_loads_ = false;
-    allow_user_workshop_content_ = false;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
@@ -9665,28 +8378,44 @@ bool CSVCMsg_ServerInfo::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(32)) goto parse_is_official_valve_server;
+        if (input->ExpectTag(32)) goto parse_is_official;
         break;
       }
 
-      // optional bool is_official_valve_server = 4;
+      // optional bool is_official = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_is_official_valve_server:
+         parse_is_official:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &is_official_valve_server_)));
-          set_has_is_official_valve_server();
+                 input, &is_official_)));
+          set_has_is_official();
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(40)) goto parse_is_hltv;
+        if (input->ExpectTag(40)) goto parse_is_protected;
         break;
       }
 
-      // optional bool is_hltv = 5;
+      // optional bool is_protected = 5;
       case 5: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_is_protected:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_protected_)));
+          set_has_is_protected();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(48)) goto parse_is_hltv;
+        break;
+      }
+
+      // optional bool is_hltv = 6;
+      case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_is_hltv:
@@ -9697,28 +8426,28 @@ bool CSVCMsg_ServerInfo::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(48)) goto parse_is_replay;
+        if (input->ExpectTag(56)) goto parse_is_redirecting_to_proxy_relay;
         break;
       }
 
-      // optional bool is_replay = 6;
-      case 6: {
+      // optional bool is_redirecting_to_proxy_relay = 7;
+      case 7: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_is_replay:
+         parse_is_redirecting_to_proxy_relay:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &is_replay_)));
-          set_has_is_replay();
+                 input, &is_redirecting_to_proxy_relay_)));
+          set_has_is_redirecting_to_proxy_relay();
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(56)) goto parse_c_os;
+        if (input->ExpectTag(64)) goto parse_c_os;
         break;
       }
 
-      // optional int32 c_os = 7;
-      case 7: {
+      // optional int32 c_os = 8;
+      case 8: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_c_os:
@@ -9729,35 +8458,19 @@ bool CSVCMsg_ServerInfo::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(69)) goto parse_map_crc;
+        if (input->ExpectTag(77)) goto parse_worldmap_crc;
         break;
       }
 
-      // optional fixed32 map_crc = 8;
-      case 8: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-         parse_map_crc:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
-                 input, &map_crc_)));
-          set_has_map_crc();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(77)) goto parse_client_crc;
-        break;
-      }
-
-      // optional fixed32 client_crc = 9;
+      // optional fixed32 worldmap_crc = 9;
       case 9: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-         parse_client_crc:
+         parse_worldmap_crc:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
-                 input, &client_crc_)));
-          set_has_client_crc();
+                 input, &worldmap_crc_)));
+          set_has_worldmap_crc();
         } else {
           goto handle_uninterpreted;
         }
@@ -9892,29 +8605,12 @@ bool CSVCMsg_ServerInfo::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(146)) goto parse_sky_name;
+        if (input->ExpectTag(146)) goto parse_host_name;
         break;
       }
 
-      // optional string sky_name = 18;
+      // optional string host_name = 18;
       case 18: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_sky_name:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_sky_name()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->sky_name().data(), this->sky_name().length(),
-            ::google::protobuf::internal::WireFormat::PARSE);
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(154)) goto parse_host_name;
-        break;
-      }
-
-      // optional string host_name = 19;
-      case 19: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
          parse_host_name:
@@ -9926,44 +8622,12 @@ bool CSVCMsg_ServerInfo::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(160)) goto parse_public_ip;
+        if (input->ExpectTag(152)) goto parse_ugc_map_id;
         break;
       }
 
-      // optional uint32 public_ip = 20;
-      case 20: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_public_ip:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &public_ip_)));
-          set_has_public_ip();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(168)) goto parse_is_redirecting_to_proxy_relay;
-        break;
-      }
-
-      // optional bool is_redirecting_to_proxy_relay = 21;
-      case 21: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_is_redirecting_to_proxy_relay:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &is_redirecting_to_proxy_relay_)));
-          set_has_is_redirecting_to_proxy_relay();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(176)) goto parse_ugc_map_id;
-        break;
-      }
-
-      // optional uint64 ugc_map_id = 22;
-      case 22: {
+      // optional uint64 ugc_map_id = 19;
+      case 19: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_ugc_map_id:
@@ -9971,38 +8635,6 @@ bool CSVCMsg_ServerInfo::MergePartialFromCodedStream(
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
                  input, &ugc_map_id_)));
           set_has_ugc_map_id();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(184)) goto parse_allow_loose_file_loads;
-        break;
-      }
-
-      // optional bool allow_loose_file_loads = 23;
-      case 23: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_allow_loose_file_loads:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &allow_loose_file_loads_)));
-          set_has_allow_loose_file_loads();
-        } else {
-          goto handle_uninterpreted;
-        }
-        if (input->ExpectTag(192)) goto parse_allow_user_workshop_content;
-        break;
-      }
-
-      // optional bool allow_user_workshop_content = 24;
-      case 24: {
-        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
-         parse_allow_user_workshop_content:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &allow_user_workshop_content_)));
-          set_has_allow_user_workshop_content();
         } else {
           goto handle_uninterpreted;
         }
@@ -10043,34 +8675,34 @@ void CSVCMsg_ServerInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->is_dedicated(), output);
   }
 
-  // optional bool is_official_valve_server = 4;
-  if (has_is_official_valve_server()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->is_official_valve_server(), output);
+  // optional bool is_official = 4;
+  if (has_is_official()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->is_official(), output);
   }
 
-  // optional bool is_hltv = 5;
+  // optional bool is_protected = 5;
+  if (has_is_protected()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->is_protected(), output);
+  }
+
+  // optional bool is_hltv = 6;
   if (has_is_hltv()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->is_hltv(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->is_hltv(), output);
   }
 
-  // optional bool is_replay = 6;
-  if (has_is_replay()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->is_replay(), output);
+  // optional bool is_redirecting_to_proxy_relay = 7;
+  if (has_is_redirecting_to_proxy_relay()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(7, this->is_redirecting_to_proxy_relay(), output);
   }
 
-  // optional int32 c_os = 7;
+  // optional int32 c_os = 8;
   if (has_c_os()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->c_os(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->c_os(), output);
   }
 
-  // optional fixed32 map_crc = 8;
-  if (has_map_crc()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFixed32(8, this->map_crc(), output);
-  }
-
-  // optional fixed32 client_crc = 9;
-  if (has_client_crc()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFixed32(9, this->client_crc(), output);
+  // optional fixed32 worldmap_crc = 9;
+  if (has_worldmap_crc()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed32(9, this->worldmap_crc(), output);
   }
 
   // optional fixed32 string_table_crc = 10;
@@ -10125,47 +8757,18 @@ void CSVCMsg_ServerInfo::SerializeWithCachedSizes(
       17, this->map_group_name(), output);
   }
 
-  // optional string sky_name = 18;
-  if (has_sky_name()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->sky_name().data(), this->sky_name().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      18, this->sky_name(), output);
-  }
-
-  // optional string host_name = 19;
+  // optional string host_name = 18;
   if (has_host_name()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->host_name().data(), this->host_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      19, this->host_name(), output);
+      18, this->host_name(), output);
   }
 
-  // optional uint32 public_ip = 20;
-  if (has_public_ip()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(20, this->public_ip(), output);
-  }
-
-  // optional bool is_redirecting_to_proxy_relay = 21;
-  if (has_is_redirecting_to_proxy_relay()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(21, this->is_redirecting_to_proxy_relay(), output);
-  }
-
-  // optional uint64 ugc_map_id = 22;
+  // optional uint64 ugc_map_id = 19;
   if (has_ugc_map_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(22, this->ugc_map_id(), output);
-  }
-
-  // optional bool allow_loose_file_loads = 23;
-  if (has_allow_loose_file_loads()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(23, this->allow_loose_file_loads(), output);
-  }
-
-  // optional bool allow_user_workshop_content = 24;
-  if (has_allow_user_workshop_content()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(24, this->allow_user_workshop_content(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(19, this->ugc_map_id(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -10191,34 +8794,34 @@ void CSVCMsg_ServerInfo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->is_dedicated(), target);
   }
 
-  // optional bool is_official_valve_server = 4;
-  if (has_is_official_valve_server()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->is_official_valve_server(), target);
+  // optional bool is_official = 4;
+  if (has_is_official()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->is_official(), target);
   }
 
-  // optional bool is_hltv = 5;
+  // optional bool is_protected = 5;
+  if (has_is_protected()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->is_protected(), target);
+  }
+
+  // optional bool is_hltv = 6;
   if (has_is_hltv()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->is_hltv(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->is_hltv(), target);
   }
 
-  // optional bool is_replay = 6;
-  if (has_is_replay()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->is_replay(), target);
+  // optional bool is_redirecting_to_proxy_relay = 7;
+  if (has_is_redirecting_to_proxy_relay()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(7, this->is_redirecting_to_proxy_relay(), target);
   }
 
-  // optional int32 c_os = 7;
+  // optional int32 c_os = 8;
   if (has_c_os()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->c_os(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->c_os(), target);
   }
 
-  // optional fixed32 map_crc = 8;
-  if (has_map_crc()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(8, this->map_crc(), target);
-  }
-
-  // optional fixed32 client_crc = 9;
-  if (has_client_crc()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(9, this->client_crc(), target);
+  // optional fixed32 worldmap_crc = 9;
+  if (has_worldmap_crc()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(9, this->worldmap_crc(), target);
   }
 
   // optional fixed32 string_table_crc = 10;
@@ -10276,49 +8879,19 @@ void CSVCMsg_ServerInfo::SerializeWithCachedSizes(
         17, this->map_group_name(), target);
   }
 
-  // optional string sky_name = 18;
-  if (has_sky_name()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->sky_name().data(), this->sky_name().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE);
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        18, this->sky_name(), target);
-  }
-
-  // optional string host_name = 19;
+  // optional string host_name = 18;
   if (has_host_name()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->host_name().data(), this->host_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        19, this->host_name(), target);
+        18, this->host_name(), target);
   }
 
-  // optional uint32 public_ip = 20;
-  if (has_public_ip()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(20, this->public_ip(), target);
-  }
-
-  // optional bool is_redirecting_to_proxy_relay = 21;
-  if (has_is_redirecting_to_proxy_relay()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(21, this->is_redirecting_to_proxy_relay(), target);
-  }
-
-  // optional uint64 ugc_map_id = 22;
+  // optional uint64 ugc_map_id = 19;
   if (has_ugc_map_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(22, this->ugc_map_id(), target);
-  }
-
-  // optional bool allow_loose_file_loads = 23;
-  if (has_allow_loose_file_loads()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(23, this->allow_loose_file_loads(), target);
-  }
-
-  // optional bool allow_user_workshop_content = 24;
-  if (has_allow_user_workshop_content()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(24, this->allow_user_workshop_content(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(19, this->ugc_map_id(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -10351,27 +8924,27 @@ int CSVCMsg_ServerInfo::ByteSize() const {
       total_size += 1 + 1;
     }
 
-    // optional bool is_official_valve_server = 4;
-    if (has_is_official_valve_server()) {
+    // optional bool is_official = 4;
+    if (has_is_official()) {
       total_size += 1 + 1;
     }
 
-    // optional bool is_hltv = 5;
+    // optional bool is_protected = 5;
+    if (has_is_protected()) {
+      total_size += 1 + 1;
+    }
+
+    // optional bool is_hltv = 6;
     if (has_is_hltv()) {
       total_size += 1 + 1;
     }
 
-    // optional bool is_replay = 6;
-    if (has_is_replay()) {
+    // optional bool is_redirecting_to_proxy_relay = 7;
+    if (has_is_redirecting_to_proxy_relay()) {
       total_size += 1 + 1;
     }
 
-    // optional bool is_redirecting_to_proxy_relay = 21;
-    if (has_is_redirecting_to_proxy_relay()) {
-      total_size += 2 + 1;
-    }
-
-    // optional int32 c_os = 7;
+    // optional int32 c_os = 8;
     if (has_c_os()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -10380,13 +8953,8 @@ int CSVCMsg_ServerInfo::ByteSize() const {
 
   }
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    // optional fixed32 map_crc = 8;
-    if (has_map_crc()) {
-      total_size += 1 + 4;
-    }
-
-    // optional fixed32 client_crc = 9;
-    if (has_client_crc()) {
+    // optional fixed32 worldmap_crc = 9;
+    if (has_worldmap_crc()) {
       total_size += 1 + 4;
     }
 
@@ -10428,8 +8996,6 @@ int CSVCMsg_ServerInfo::ByteSize() const {
           this->game_dir());
     }
 
-  }
-  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     // optional string map_name = 16;
     if (has_map_name()) {
       total_size += 2 +
@@ -10437,6 +9003,8 @@ int CSVCMsg_ServerInfo::ByteSize() const {
           this->map_name());
     }
 
+  }
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     // optional string map_group_name = 17;
     if (has_map_group_name()) {
       total_size += 2 +
@@ -10444,42 +9012,18 @@ int CSVCMsg_ServerInfo::ByteSize() const {
           this->map_group_name());
     }
 
-    // optional string sky_name = 18;
-    if (has_sky_name()) {
-      total_size += 2 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->sky_name());
-    }
-
-    // optional string host_name = 19;
+    // optional string host_name = 18;
     if (has_host_name()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->host_name());
     }
 
-    // optional uint32 public_ip = 20;
-    if (has_public_ip()) {
-      total_size += 2 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->public_ip());
-    }
-
-    // optional uint64 ugc_map_id = 22;
+    // optional uint64 ugc_map_id = 19;
     if (has_ugc_map_id()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::UInt64Size(
           this->ugc_map_id());
-    }
-
-    // optional bool allow_loose_file_loads = 23;
-    if (has_allow_loose_file_loads()) {
-      total_size += 2 + 1;
-    }
-
-    // optional bool allow_user_workshop_content = 24;
-    if (has_allow_user_workshop_content()) {
-      total_size += 2 + 1;
     }
 
   }
@@ -10518,14 +9062,14 @@ void CSVCMsg_ServerInfo::MergeFrom(const CSVCMsg_ServerInfo& from) {
     if (from.has_is_dedicated()) {
       set_is_dedicated(from.is_dedicated());
     }
-    if (from.has_is_official_valve_server()) {
-      set_is_official_valve_server(from.is_official_valve_server());
+    if (from.has_is_official()) {
+      set_is_official(from.is_official());
+    }
+    if (from.has_is_protected()) {
+      set_is_protected(from.is_protected());
     }
     if (from.has_is_hltv()) {
       set_is_hltv(from.is_hltv());
-    }
-    if (from.has_is_replay()) {
-      set_is_replay(from.is_replay());
     }
     if (from.has_is_redirecting_to_proxy_relay()) {
       set_is_redirecting_to_proxy_relay(from.is_redirecting_to_proxy_relay());
@@ -10535,11 +9079,8 @@ void CSVCMsg_ServerInfo::MergeFrom(const CSVCMsg_ServerInfo& from) {
     }
   }
   if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    if (from.has_map_crc()) {
-      set_map_crc(from.map_crc());
-    }
-    if (from.has_client_crc()) {
-      set_client_crc(from.client_crc());
+    if (from.has_worldmap_crc()) {
+      set_worldmap_crc(from.worldmap_crc());
     }
     if (from.has_string_table_crc()) {
       set_string_table_crc(from.string_table_crc());
@@ -10559,31 +9100,19 @@ void CSVCMsg_ServerInfo::MergeFrom(const CSVCMsg_ServerInfo& from) {
     if (from.has_game_dir()) {
       set_game_dir(from.game_dir());
     }
-  }
-  if (from._has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     if (from.has_map_name()) {
       set_map_name(from.map_name());
     }
+  }
+  if (from._has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     if (from.has_map_group_name()) {
       set_map_group_name(from.map_group_name());
-    }
-    if (from.has_sky_name()) {
-      set_sky_name(from.sky_name());
     }
     if (from.has_host_name()) {
       set_host_name(from.host_name());
     }
-    if (from.has_public_ip()) {
-      set_public_ip(from.public_ip());
-    }
     if (from.has_ugc_map_id()) {
       set_ugc_map_id(from.ugc_map_id());
-    }
-    if (from.has_allow_loose_file_loads()) {
-      set_allow_loose_file_loads(from.allow_loose_file_loads());
-    }
-    if (from.has_allow_user_workshop_content()) {
-      set_allow_user_workshop_content(from.allow_user_workshop_content());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -10611,13 +9140,12 @@ void CSVCMsg_ServerInfo::Swap(CSVCMsg_ServerInfo* other) {
     std::swap(protocol_, other->protocol_);
     std::swap(server_count_, other->server_count_);
     std::swap(is_dedicated_, other->is_dedicated_);
-    std::swap(is_official_valve_server_, other->is_official_valve_server_);
+    std::swap(is_official_, other->is_official_);
+    std::swap(is_protected_, other->is_protected_);
     std::swap(is_hltv_, other->is_hltv_);
-    std::swap(is_replay_, other->is_replay_);
     std::swap(is_redirecting_to_proxy_relay_, other->is_redirecting_to_proxy_relay_);
     std::swap(c_os_, other->c_os_);
-    std::swap(map_crc_, other->map_crc_);
-    std::swap(client_crc_, other->client_crc_);
+    std::swap(worldmap_crc_, other->worldmap_crc_);
     std::swap(string_table_crc_, other->string_table_crc_);
     std::swap(max_clients_, other->max_clients_);
     std::swap(max_classes_, other->max_classes_);
@@ -10626,12 +9154,8 @@ void CSVCMsg_ServerInfo::Swap(CSVCMsg_ServerInfo* other) {
     std::swap(game_dir_, other->game_dir_);
     std::swap(map_name_, other->map_name_);
     std::swap(map_group_name_, other->map_group_name_);
-    std::swap(sky_name_, other->sky_name_);
     std::swap(host_name_, other->host_name_);
-    std::swap(public_ip_, other->public_ip_);
     std::swap(ugc_map_id_, other->ugc_map_id_);
-    std::swap(allow_loose_file_loads_, other->allow_loose_file_loads_);
-    std::swap(allow_user_workshop_content_, other->allow_user_workshop_content_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -12547,6 +11071,250 @@ void CSVCMsg_SetPause::Swap(CSVCMsg_SetPause* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = CSVCMsg_SetPause_descriptor_;
   metadata.reflection = CSVCMsg_SetPause_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CSVCMsg_SetPauseTimed::kPausedFieldNumber;
+const int CSVCMsg_SetPauseTimed::kExpireTimeFieldNumber;
+#endif  // !_MSC_VER
+
+CSVCMsg_SetPauseTimed::CSVCMsg_SetPauseTimed()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void CSVCMsg_SetPauseTimed::InitAsDefaultInstance() {
+}
+
+CSVCMsg_SetPauseTimed::CSVCMsg_SetPauseTimed(const CSVCMsg_SetPauseTimed& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void CSVCMsg_SetPauseTimed::SharedCtor() {
+  _cached_size_ = 0;
+  paused_ = false;
+  expire_time_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CSVCMsg_SetPauseTimed::~CSVCMsg_SetPauseTimed() {
+  SharedDtor();
+}
+
+void CSVCMsg_SetPauseTimed::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CSVCMsg_SetPauseTimed::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CSVCMsg_SetPauseTimed::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CSVCMsg_SetPauseTimed_descriptor_;
+}
+
+const CSVCMsg_SetPauseTimed& CSVCMsg_SetPauseTimed::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_netmessages_2eproto();
+  return *default_instance_;
+}
+
+CSVCMsg_SetPauseTimed* CSVCMsg_SetPauseTimed::default_instance_ = NULL;
+
+CSVCMsg_SetPauseTimed* CSVCMsg_SetPauseTimed::New() const {
+  return new CSVCMsg_SetPauseTimed;
+}
+
+void CSVCMsg_SetPauseTimed::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    paused_ = false;
+    expire_time_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CSVCMsg_SetPauseTimed::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional bool paused = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &paused_)));
+          set_has_paused();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectTag(21)) goto parse_expire_time;
+        break;
+      }
+
+      // optional float expire_time = 2;
+      case 2: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
+         parse_expire_time:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &expire_time_)));
+          set_has_expire_time();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void CSVCMsg_SetPauseTimed::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional bool paused = 1;
+  if (has_paused()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->paused(), output);
+  }
+
+  // optional float expire_time = 2;
+  if (has_expire_time()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->expire_time(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* CSVCMsg_SetPauseTimed::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // optional bool paused = 1;
+  if (has_paused()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->paused(), target);
+  }
+
+  // optional float expire_time = 2;
+  if (has_expire_time()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->expire_time(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int CSVCMsg_SetPauseTimed::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional bool paused = 1;
+    if (has_paused()) {
+      total_size += 1 + 1;
+    }
+
+    // optional float expire_time = 2;
+    if (has_expire_time()) {
+      total_size += 1 + 4;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CSVCMsg_SetPauseTimed::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CSVCMsg_SetPauseTimed* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CSVCMsg_SetPauseTimed*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CSVCMsg_SetPauseTimed::MergeFrom(const CSVCMsg_SetPauseTimed& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_paused()) {
+      set_paused(from.paused());
+    }
+    if (from.has_expire_time()) {
+      set_expire_time(from.expire_time());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CSVCMsg_SetPauseTimed::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CSVCMsg_SetPauseTimed::CopyFrom(const CSVCMsg_SetPauseTimed& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CSVCMsg_SetPauseTimed::IsInitialized() const {
+
+  return true;
+}
+
+void CSVCMsg_SetPauseTimed::Swap(CSVCMsg_SetPauseTimed* other) {
+  if (other != this) {
+    std::swap(paused_, other->paused_);
+    std::swap(expire_time_, other->expire_time_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CSVCMsg_SetPauseTimed::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CSVCMsg_SetPauseTimed_descriptor_;
+  metadata.reflection = CSVCMsg_SetPauseTimed_reflection_;
   return metadata;
 }
 
