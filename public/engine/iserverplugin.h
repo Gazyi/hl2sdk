@@ -1,4 +1,4 @@
-//========= Copyright © 1996-2005, Valve Corporation, All rights reserved. ============//
+//========= Copyright Â© 1996-2005, Valve Corporation, All rights reserved. ============//
 //
 // Purpose: 
 //
@@ -47,7 +47,8 @@ typedef int QueryCvarCookie_t;
 #define INTERFACEVERSION_ISERVERPLUGINCALLBACKS_VERSION_1	"ISERVERPLUGINCALLBACKS001"
 #define INTERFACEVERSION_ISERVERPLUGINCALLBACKS_VERSION_2	"ISERVERPLUGINCALLBACKS002"
 #define INTERFACEVERSION_ISERVERPLUGINCALLBACKS_VERSION_3	"ISERVERPLUGINCALLBACKS003"
-#define INTERFACEVERSION_ISERVERPLUGINCALLBACKS				"ISERVERPLUGINCALLBACKS004"
+#define INTERFACEVERSION_ISERVERPLUGINCALLBACKS_VERSION_4	"ISERVERPLUGINCALLBACKS004"
+#define INTERFACEVERSION_ISERVERPLUGINCALLBACKS				"ISERVERPLUGINCALLBACKS005"
 
 //-----------------------------------------------------------------------------
 // Purpose: callbacks the engine exposes to the 3rd party plugins (ala MetaMod)
@@ -153,7 +154,7 @@ public:
 		byte *pbPlainTextKeyForNetchan ) = 0;
 };
 
-#define INTERFACEVERSION_ISERVERPLUGINHELPERS			"ISERVERPLUGINHELPERS001"
+#define INTERFACEVERSION_ISERVERPLUGINHELPERS			"ISERVERPLUGINHELPERS002"
 
 
 typedef enum

@@ -87,7 +87,7 @@ typedef uint64 PublishedFileId_t;
 #define DLLEXPORT /* */
 #endif
 
-#define INTERFACEVERSION_VENGINESERVER	"VEngineServer023"
+#define INTERFACEVERSION_VENGINESERVER	"VEngineServer024"
 
 struct bbox_t
 {
@@ -501,7 +501,7 @@ public:
 	virtual bool AnyClientsInHltvReplayMode( void ) = 0;
 };
 
-#define INTERFACEVERSION_SERVERGAMEDLL				"ServerGameDLL005"
+#define INTERFACEVERSION_SERVERGAMEDLL				"ServerGameDLL009"
 
 //-----------------------------------------------------------------------------
 // Purpose: These are the interfaces that the game .dll exposes to the engine
@@ -553,8 +553,6 @@ public:
 	// Returns string describing current .dll.  e.g., TeamFortress 2, Half-Life 2.  
 	//  Hey, it's more descriptive than just the name of the game directory
 	virtual const char     *GetGameDescription( void ) = 0;
-	
-	virtual const char     *GetGameDescription2( void ) = 0; // ????
 	
 	// Let the game .dll allocate it's own network/shared string tables
 	virtual void			CreateNetworkStringTables( void ) = 0;
@@ -652,7 +650,7 @@ public:
 //-----------------------------------------------------------------------------
 #define VENGINE_SERVER_RANDOM_INTERFACE_VERSION	"VEngineRandom001"
 
-#define INTERFACEVERSION_SERVERGAMEENTS			"ServerGameEnts001"
+#define INTERFACEVERSION_SERVERGAMEENTS			"ServerGameEnts002"
 //-----------------------------------------------------------------------------
 // Purpose: Interface to get at server entities
 //-----------------------------------------------------------------------------
@@ -682,7 +680,7 @@ public:
 	virtual void			PrepareForFullUpdate( edict_t *pEdict ) = 0;
 };
 
-#define INTERFACEVERSION_SERVERGAMECLIENTS		"ServerGameClients004"
+#define INTERFACEVERSION_SERVERGAMECLIENTS		"ServerGameClients005"
 
 //-----------------------------------------------------------------------------
 // Purpose: Player / Client related functions
@@ -793,7 +791,8 @@ public:
 	// Only works in single player
 	virtual bool IsHDREnabled( void ) = 0;
 };
-
+// Doesn't exist in JB?
+/*
 #define INTERFACEVERSION_PLUGINHELPERSCHECK		"PluginHelpersCheck001"
 
 //-----------------------------------------------------------------------------
@@ -804,7 +803,7 @@ abstract_class IPluginHelpersCheck
 public:
 	virtual bool CreateMessage( const char *plugin, edict_t *pEntity, DIALOG_TYPE type, KeyValues *data ) = 0;
 };
-
+*/
 //-----------------------------------------------------------------------------
 // Purpose: Interface exposed from the client .dll back to the engine for specifying shared .dll IAppSystems (e.g., ISoundEmitterSystem)
 //-----------------------------------------------------------------------------

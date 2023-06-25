@@ -1,4 +1,4 @@
-//===== Copyright © 1996-2005, Valve Corporation, All rights reserved. ======//
+//===== Copyright Â© 1996-2005, Valve Corporation, All rights reserved. ======//
 //
 // Purpose: 
 //
@@ -34,7 +34,7 @@ struct RenderableInstance_t;
 //-----------------------------------------------------------------------------
 // Interface versions for static props
 //-----------------------------------------------------------------------------
-#define INTERFACEVERSION_STATICPROPMGR_CLIENT		"StaticPropMgrClient005"
+#define INTERFACEVERSION_STATICPROPMGR_CLIENT		"StaticPropMgrClient006"
 #define INTERFACEVERSION_STATICPROPMGR_SERVER		"StaticPropMgrServer002"
 
 
